@@ -1,0 +1,18 @@
+Sass Options
+
+
+sass <input.scss> [output.css]
+sass --watch <input.scss> [output.css]
+
+sass [<input.scss>:<output.css>] [<input/>:<output/>]
+
+
+sass --style=compressed style.scss
+sass -s=compressed style.scss
+
+Color Mode:
+sass --color style.scss style.css
+sass -c style.scss style.css
+
+Directory mode
+sass themes:public/css

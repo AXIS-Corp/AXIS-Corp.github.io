@@ -1,0 +1,428 @@
+// colors
+$black: #3e3e3e;
+$pink-liter: #fff7f9;
+$pink-lite: #ffc4d5;
+$pink-med: #ff7b9f;
+$pink-med-dark: #FF648E;
+$pink-dark: #d85482;
+$blue-lite: #EFFDFC;
+$blue-med: #29b4ca;
+$blue-med-dark: #1FA1B5;
+$blue-dark: #0d98ad;
+$yellow-lite: #fffad1;
+$yellow-med: #fff395;
+$yellow-dark: #ffea40;
+$red: #ff0000;
+
+$blue-tab: #4dcde2;
+$pink-tab: #F8A7BF;
+
+// drop-shadow
+@mixin dropShadow() {
+    -webkit-box-shadow: -1px 2px 19px -1px rgb(199 20 69 / 16%); 
+    box-shadow: -1px 2px 19px -1px rgb(199 20 69 / 16%);
+}
+@mixin dropShadowBlack() {
+    -webkit-box-shadow: -1px 2px 19px -1px rgb(0 0 0 / 10%); 
+    box-shadow: -1px 2px 19px -1px rgb(0 0 0 / 10%);
+}
+@mixin dropShadowBlue() {
+    -webkit-box-shadow: 4px 11px 23px -8px rgba(13,152,173,0.26); 
+    box-shadow: 4px 11px 23px -8px rgba(13,152,173,0.26);
+}
+
+//メディアクエリ
+@mixin large-screen {
+    @media (min-width: 1500px) {
+        @content;
+    }
+}
+@mixin pc {
+    @media (min-width: 1225px) {
+        @content;
+    }
+}
+@mixin tab {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin med {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+@mixin tab-ver {
+    @media (max-width: 768px) {
+      @content;
+    }
+}
+@mixin sp {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@include med {
+    .pc {
+        display: none!important;
+    }
+}
+.tab {display: none;}
+@include tab {
+    .tab {
+        display: block;
+    }
+}
+.tab-ver {display: none;}
+@include tab-ver {
+    .above-tab {
+        display: none!important;
+    }
+    .tab-ver {
+        display: none;
+    }
+}
+.sp {display: none;}
+.above-sp {display: block;}
+@include sp {
+    .above-sp {
+        display: none!important;
+    }
+    .sp {
+        display: block!important;
+    }
+}
+
+
+// fonts
+// Noto Serif JP : Regular 400, Medium 500
+// Noto Sans JP : Regular 400, Medium 500, Bold 700
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500&display=swap');
+
+$serif: 'Noto Serif JP', serif;
+$sansSerif: 'Noto Sans JP', sans-serif;
+
+@function rem($pixels) {
+    @return math.div($pixels, 16) * 1rem;
+}
+
+
+
+
+
+// atomic colors （spanですぐ使用できるよう）
+.txt-black { color: $black; }
+.txt-white { color: #fff; }
+.txt-pink-lite { color: $pink-lite; }
+.txt-pink-med { color: $pink-med; }
+.txt-pink-dark { color: $pink-dark; }
+.txt-blue-med { color: $blue-med; }
+.txt-blue-dark { color: $blue-dark; }
+.txt-yellow-lite { color: $yellow-lite; }
+.txt-yellow-med { color: $yellow-med; }
+.txt-yellow-dark { color: $yellow-dark; }
+.txt-red { color: $red; }
+
+
+// useful atomics
+.block {display: block;}
+
+// various variables
+
+$pink-diag: url(../img/bg-pink-diagonal.png);
+$blue-diag: url(../img/bg-blue-diagonal.png);
+
+
+// buttons
+
+.btn {
+    display: block;
+    height: 75px;
+    padding: 4px;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    &__inner {
+        border: 1px solid rgba(255, 255, 255, .8);
+    }
+    &--hover-down {
+        position: relative;
+        top: 0;
+    }
+    &--hover-down:hover {
+        top: 5px;
+    }
+    &--blue-med {
+        background-color: $blue-med;
+    }
+    &--pink {
+        background-color: $pink-med;
+    }
+    &--blueGrad {
+        background: linear-gradient(#53D9EF, #29b4ca);
+        transition: top .3s ease-in-out;
+        &:hover {
+            background: $blue-med-dark;
+            top: 5px;
+        }
+    }
+    &--pinkGrad {
+        @include dropShadowBlack;
+        background: linear-gradient(#FF9BB6, #FF6A93); 
+        top: 0;
+        transition: top .3s ease-in-out;
+        &:hover {
+            background: $pink-med-dark;
+            top: 5px;
+        }
+    }
+    &--arrow {
+        span.arrow-placer {
+            position: relative;
+            &::after {
+                transition: all .3s ease-in-out;
+                content: url(../img/arrow-white.png);
+                position: absolute;
+                top: -25%;
+                right: -40px;
+            }
+        }
+        &:hover {
+            span.arrow-placer {
+                &::after {
+                    right: -50px;
+                }
+            }
+        }
+    }
+    &__inner {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgb(255, 255, 255, .6);
+    }
+    &--insta {
+        width: 75px;
+        transition: all .3s ease-in-out;
+        span {
+            display: block;
+            background-image: url(../img/icon-insta.png);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &:hover {
+            background-color: #14ADC6;
+        }
+    }
+    &--shiryo {
+        width: 319px;
+        font-size: rem(22);
+        font-weight: bold;
+        font-family: $sansSerif;
+        > span {
+            transition: all .3s ease-in-out;
+            padding: 15px 0;
+            text-align: center;
+            &::before {
+                content: url(../img/icon-mail.png);
+                position: relative;
+                right: 14px;
+                top: 4px;
+                @include med {
+                    right: 0;
+                }
+            }
+            &::after {
+                transition: all .3s ease-in-out;
+                content: url(../img/arrow-white-short.png);
+                position: absolute;
+                top: 16%;
+                right: 5%;
+                opacity: 0;
+            }
+            span {
+                transition: all .3s ease-in-out;
+            }
+        }
+        &:hover {
+            background-color: $pink-med-dark;
+            > span {
+                span {
+                    margin-right: 25px;
+                }
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &--shiryo-body {
+        max-width: 600px;
+        width: 95%;
+        margin: 0 auto 30px;
+        position: relative;
+        font-size: rem(28);
+        font-weight: 700;
+        .btn__inner {
+            font: 700 rem(28) $sansSerif;
+            padding-top: 11px;
+        }
+    }
+    &--kengaku-body {
+        .btn__inner {
+            font: 700 rem(28) $sansSerif;
+            padding-top: 11px;
+        }
+        &:nth-last-child(2) {
+            max-width: 663px;
+            margin: 0 auto 25px;
+        }
+        &:nth-last-child(1) {
+            max-width: 663px;
+            margin: 0 auto 25px;
+        }
+    }
+    @include tab-ver {
+        &--shiryo-body {
+            .btn__inner {
+                font-size: rem(20);
+            }
+        }
+        &--kengaku-body {
+            .btn__inner {
+                font-size: rem(20);
+                padding-top: 17px;
+            }
+        }
+    }
+    @include sp {
+        &--shiryo-body {
+            .btn__inner {
+                font-size: rem(18);
+                padding-top: 18px;
+                .arrow-placer::after {
+                    content: none;
+                }
+            }
+        }
+        &__inner {
+            &.btn__inner--sp-line-break {
+                padding-top: 3px;
+                span.arrow-placer::after {
+                    top: 10px;
+                    right: -70px;
+                }
+            }
+        }
+    }
+}
+
+.highlight {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    &::after {
+        display: block;
+        position: relative;
+        height: 18px;
+        content: "";
+        width: 105%;
+        top: -19px;
+        z-index: -1;
+        padding: 0 25px;
+        left: -2.5%;
+    }
+    &--large::after {
+        height: 19px;
+        top: -19px;
+    }
+    &--med-large::after {
+        height: 15px;
+        top: -6px;
+        width: 100%;
+        left: 0%;
+    }
+    &--med::after {
+        height: 12px;
+        top: -12px;
+        width: 100%;
+        left: 0%;
+    }
+    &--small::after {
+        height: 10px;
+        top: -5px;
+        width: 100%;
+        left: 0%;
+    }
+    &--yellow-lite::after {
+        background-color: $yellow-lite;
+    }
+    &--yellow-med::after {
+        background-color: $yellow-med;
+    }
+    &--pink-liter::after {
+        background-color: $pink-liter;
+    }
+}
+
+.underline {
+    position: relative;
+    display: inline-block;
+    &::after {
+        display: block;
+        background-color: $pink-med;
+        height: 2px;
+        width: 100%;
+        content: '';
+    }
+    &--pink-liter::after {
+        background-color: $pink-liter;
+        height: 4px;
+    }
+    &--pink-dotted::after {
+        background: repeat-x url(../img/bg-dotted-line-pink.png);
+    }
+    &--blue-dotted::after {
+        background: repeat-x url(../img/bg-dotted-line-blue.png);
+    }
+}
+
+.numbered {
+    position: relative;
+    &::before {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -5px;
+        background: no-repeat top 5px left url(../img/shape-triangle-yellow-lite.png);
+        
+    }
+    &--pink {
+        &::before {
+            padding: 0px 0 0 10px;
+    
+        }
+        &.numbered--one::before {content: url(../img/pic-one-pink.png);}
+        &.numbered--two::before {content: url(../img/pic-two-pink.png);}
+        &.numbered--three::before {content: url(../img/pic-three-pink.png);}
+        &.numbered--four::before {content: url(../img/pic-four-pink.png);}
+        &.numbered--five::before {content: url(../img/pic-five-pink.png);}
+    }
+    &--blue {
+        &::before {
+            padding: 10px 0 0 25px;    
+        }
+        &.numbered--one::before {content: url(../img/pic-one-blue.png);}
+        &.numbered--two::before {content: url(../img/pic-two-blue.png);}
+        &.numbered--three::before {content: url(../img/pic-three-blue.png);}
+        &.numbered--four::before {content: url(../img/pic-four-blue.png);}
+        &.numbered--five::before {content: url(../img/pic-five-blue.png);}
+    }
+    @include sp {
+        &::before {
+            padding: 0 0 0 0px;
+        }
+    }
+}
+
