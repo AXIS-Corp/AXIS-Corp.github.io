@@ -4,7 +4,18 @@ Sass Options
 sass <input.scss> [output.css]
 sass --watch <input.scss> [output.css]
 
+
+Many-to-many Mode
 sass [<input.scss>:<output.css>] [<input/>:<output/>]
+​# Compiles style.scss to style.css.
+$ sass style.scss:style.css
+
+​# Compiles light.scss and dark.scss to light.css and dark.css.
+$ sass light.scss:light.css dark.scss:dark.css
+
+​# Compiles all Sass files in themes/ to CSS files in public/css/.
+$ sass themes:public/css
+
 
 
 sass --style=compressed style.scss
@@ -16,3 +27,8 @@ sass -c style.scss style.css
 
 Directory mode
 sass themes:public/css
+
+
+Things to look at in the Sass files:
+_objecti-fit.scss
+_flex-set.scss

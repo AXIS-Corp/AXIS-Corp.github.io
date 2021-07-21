@@ -1,0 +1,261 @@
+// ==========================================================
+//  wordpress
+// ==========================================================
+/*	wysiwyg
+--------------------------------------------- */
+.wysiwyg {
+    font-size: pxtorem(16, 'pc');
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        font-size: pxtorem(11, 'sp');
+    }
+
+	&:after {
+	    content: "";
+	    display: block;
+	    clear: both;
+	}
+	h1 {
+	    font-size: 2.0em;
+	    margin-top: 30px;
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	margin-top: pxtovw(15, 'sp');
+	    }
+	}
+	h2 {
+	    font-size: 1.5em;
+	    margin-top: 30px;
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	margin-top: pxtovw(15, 'sp');
+	    }
+	}
+	h3 {
+	    font-size: 1.17em;
+	    margin-top: 30px;
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	margin-top: pxtovw(15, 'sp');
+	    }
+	}
+	h4 {
+	    font-size: 1.0em;
+	    margin-top: 30px;
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	margin-top: pxtovw(15, 'sp');
+	    }
+	}
+	h5 {
+	    font-size: 0.83em;
+	    margin-top: 30px;
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	margin-top: pxtovw(15, 'sp');
+	    }
+	}
+	h6 {
+	    font-size: 0.67em;
+	    margin-top: 30px;
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	margin-top: pxtovw(15, 'sp');
+	    }
+	}
+	pre {
+	    display: block;
+	    font-family: Consolas, Monaco, monospace;
+	}
+	strong {
+	    font-weight: bold;
+	}
+	em {
+	    font-style: italic;
+	}
+	ul {
+	    list-style: outside disc;
+	    margin-left: 2em;
+	    margin-top: 30px;
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	margin-top: pxtovw(15, 'sp');
+	    }
+	}
+	ol {
+	    list-style: outside decimal;
+	    margin-left: 2em;
+	    margin-top: 30px;
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	margin-top: pxtovw(15, 'sp');
+	    }
+	}
+	blockquote {
+	    display: block;
+	    padding: 2em;
+	    margin-top: 30px;
+	    background-color: #F2F2F2;
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	margin-top: pxtovw(15, 'sp');
+	    	padding: 1.5em;
+	    }
+
+	    p {
+	    	margin-top: 0;
+	    }
+	}
+	a {
+	    color: red;
+
+	    @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+	        @include hover-underline-none();
+	    }
+	}
+	del {
+	    text-decoration: line-through;
+	}
+	hr {
+	    display: block;
+	    border: none;
+	    border-top: #9a9a9a 1px solid;
+	    border-bottom: #eeeeee 1px solid;
+	}
+	p {
+		font-size: pxtorem(16, 'pc');
+		word-break: break-all;
+		margin-top: 30px;
+		line-height: 2;
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			font-size: pxtorem(11, 'sp');
+		}
+	}
+	img {
+		width: 90%;
+		margin: 0 auto;
+		display: block;
+		height: auto;
+	}
+
+	.alignright {
+	    float: right;
+	    margin-left: 1em;
+	}
+	.alignleft {
+	    float: left;
+	    margin-right: 1em;
+	}
+	.aligncenter {
+	    display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+}
+
+/*  wp-pagenavi
+--------------------------------------------- */
+.wp-pagenavi {
+	display: flex;
+	justify-content: center;
+	margin-top: 90px;
+
+	@media screen and (max-width: #{$breakpoint-pc}px) {
+		margin-top: pxtovw(90, 'pc');
+	}
+
+	@media screen and (max-width: #{$breakpoint-sp}px) {
+		margin-top: pxtovw(45, 'sp');
+	}
+
+	> span,
+	> a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 53px;
+		height: 53px;
+		font-size: pxtorem(16, 'pc');
+		color: $white1;
+		background-color: $gray5;
+		margin: 0 5px !important;
+		padding: 0 !important;
+		border: none !important;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			width: pxtovw(53, 'pc');
+			height: pxtovw(53, 'pc');
+			font-size: pxtovw(16, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			font-size: pxtorem(11, 'sp');
+			width: pxtovw(30, 'sp');
+			height: pxtovw(30, 'sp');
+		}
+	}
+
+	> a {
+		@media screen and (min-width: #{$breakpoint-sp + 1}px) {
+	        @include hover-opacity();
+	    }
+
+	    span {
+	    	padding: 0 !important;
+	    	margin: 0 !important;
+	    	border: none !important;
+	    }
+	}
+
+	.current {
+		background-color: $theme1;
+	}
+
+	.first {
+		width: auto !important;
+		padding: 0 10px !important;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			padding: 0 pxtovw(10, 'pc') !important;
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			padding: 0 pxtovw(10, 'sp') !important;
+		}
+	}
+
+	.last {
+		width: auto !important;
+		padding: 0 10px !important;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			padding: 0 pxtovw(10, 'pc') !important;
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			padding: 0 pxtovw(10, 'sp') !important;
+		}
+	}
+
+	&__arrow {
+		background: url("../img/common/icon_arrow-page.svg") 0 0 no-repeat;
+		background-size: 100% auto;
+		width: 6px;
+		height: 14px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			width: pxtovw(6, 'pc');
+			height: pxtovw(14, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			width: pxtovw(6, 'sp');
+			height: pxtovw(14, 'sp');
+		}
+
+		&--prev {
+			transform: rotate(-180deg);
+		}
+	}
+}

@@ -1,0 +1,615 @@
+/* ---------------------------------------------
+*   c-box
+--------------------------------------------- */
+.c-box {
+	position: relative;
+	width: percentage(1100/1200);
+	margin: 0 0 60px auto;
+	padding: 50px 65px 50px 230px;
+	background: url("../img/top/img_bg-voice.jpg") 0 0 no-repeat;
+	background-size: cover;
+
+	@media screen and (max-width: #{$breakpoint-pc}px) {
+		margin: 0 0 pxtovw(60, 'pc') auto;
+		padding: pxtovw(50, 'pc') pxtovw(65, 'pc') pxtovw(50, 'pc') pxtovw(230, 'pc');
+	}
+
+	@media screen and (max-width: #{$breakpoint-sp}px) {
+		width: 100%;
+		padding: pxtovw(25, 'sp') pxtovw(15, 'sp');
+		margin-bottom: pxtovw(40, 'sp');
+	}
+
+	@at-root .c-box-wrap--narrow & {
+		margin-bottom: 20px;
+		padding: 25px 65px 25px 230px;
+		min-height: 150px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			margin-bottom: pxtovw(20, 'pc');
+			padding: pxtovw(25, 'pc') pxtovw(65, 'pc') pxtovw(25, 'pc') pxtovw(230, 'pc');
+			min-height: pxtovw(150, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			padding: pxtovw(15, 'sp');
+			padding-top: pxtovw(55, 'sp');
+			margin-bottom: pxtovw(30, 'sp');
+			min-height: auto;
+		}
+	}
+
+	@at-root .c-box-wrap--height & {
+		min-height: 230px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			min-height: pxtovw(230, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			min-height: auto;
+		}
+	}
+
+	&__head {
+		position: absolute;
+		top: 40px;
+		left: -70px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			top: pxtovw(40, 'pc');
+			left: pxtovw(-70, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			position: static;
+		}
+
+		@at-root .c-box-wrap--narrow & {
+			top: 20px;
+
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				top: pxtovw(20, 'pc');
+			}
+		}
+	}
+
+	&__num {
+		display: block;
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			position: absolute;
+			top: pxtovw(-25, 'sp');
+			left: pxtovw(190, 'sp');
+		}
+
+		&--1 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(242, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(131, 'sp');
+			}
+		}
+
+		&--2 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(270, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(147, 'sp');
+			}
+		}
+
+		&--3 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(273, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(273 * 0.54, 'sp');
+			}
+		}
+
+		&--4 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(268, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(268 * 0.54, 'sp');
+			}
+		}
+
+		&--5 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(271, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(271 * 0.54, 'sp');
+			}
+		}
+
+		&--6 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(269, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(269 * 0.54, 'sp');
+			}
+		}
+
+		&--7 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(260, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(260 * 0.54, 'sp');
+			}
+		}
+
+		&--8 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(272, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(272 * 0.54, 'sp');
+			}
+		}
+
+		&--9 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(259, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(259 * 0.54, 'sp');
+			}
+		}
+
+		&--10 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(241, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(241 * 0.54, 'sp');
+			}
+		}
+
+		&--11 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(222, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(222 * 0.54, 'sp');
+			}
+		}
+
+		&--12 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(250, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(250 * 0.54, 'sp');
+			}
+		}
+
+		&--13 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(253, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(253 * 0.54, 'sp');
+			}
+		}
+
+		&--14 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(248, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(248 * 0.54, 'sp');
+			}
+		}
+
+		&--15 {
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(251, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(251 * 0.54, 'sp');
+			}
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+    &__ttl-txt {
+        color: $theme1;
+        font-size: pxtorem(20, 'pc');
+        margin-left: 105px;
+        margin-top: -25px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+        	font-size: pxtovw(20, 'pc');
+        	margin-left: pxtovw(105, 'pc');
+        	margin-top: pxtovw(-25, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+        	font-size: pxtorem(18, 'sp');
+        	margin: 0;
+        	margin-bottom: pxtovw(5, 'sp');
+        }
+    }
+
+    &__txt-b {
+    	color: $theme2;
+    	font-size: pxtorem(18, 'pc');
+    	margin-top: 10px;
+    	margin-bottom: 15px;
+    	padding-bottom: 20px;
+    	border-bottom: 1px dashed $black3;
+
+    	@media screen and (max-width: #{$breakpoint-pc}px) {
+    		font-size: pxtovw(18, 'pc');
+    		margin-top: pxtovw(10, 'pc');
+    		margin-bottom: pxtovw(15, 'pc');
+    		padding-bottom: pxtovw(20, 'pc');
+    	}
+
+    	@media screen and (max-width: #{$breakpoint-sp}px) {
+    		font-size: pxtorem(13, 'sp');
+    		margin-top: pxtovw(10, 'sp');
+    		padding-bottom: pxtovw(10, 'sp');
+    	}
+    }
+
+    &__txt {
+    	display: block;
+    	font-size: pxtorem(16, 'pc');
+    	margin-top: 5px;
+    	margin-left: 105px;
+
+    	@media screen and (max-width: #{$breakpoint-pc}px) {
+    		font-size: pxtovw(16, 'pc');
+	    	margin-top: pxtovw(5, 'pc');
+	    	margin-left: pxtovw(105, 'pc');
+    	}
+
+    	@media screen and (max-width: #{$breakpoint-sp}px) {
+    		font-size: pxtorem(11, 'sp');
+	    	margin-bottom: pxtovw(10, 'sp');
+	    	margin-left: 0;
+    	}
+    }
+
+    .c-box-ttl {
+    	margin-bottom: 5px;
+
+    	@media screen and (max-width: #{$breakpoint-pc}px) {
+    		margin-bottom: pxtovw(5, 'pc');
+    	}
+    }
+
+    .c-txt {
+    	color: $black2;
+    }
+}
+
+/* ---------------------------------------------
+*   box-prevent
+--------------------------------------------- */
+.box-prevent {
+	$host: &;
+	background-color: $white1;
+	background: repeating-linear-gradient(to right, rgba($theme2,0.2), rgba($theme2,0.2) 47px, rgba($theme2,0.4) 47px, rgba($theme2,0.4) 94px);
+	background-position: 7px center;
+	padding: 17px;
+	max-width: 1240px;
+	margin: 65px auto 135px;
+	border-radius: 5px;
+	position: relative;
+	z-index: 1;
+
+	@media screen and (max-width: #{$breakpoint-pc}px) {
+		background: repeating-linear-gradient(to right, rgba($theme2,0.2), rgba($theme2,0.2) pxtovw(47, 'pc'), rgba($theme2,0.4) pxtovw(47, 'pc'), rgba($theme2,0.4) pxtovw(94, 'pc'));
+		background-position: pxtovw(7, 'pc') center;
+		padding: pxtovw(17, 'pc');
+		margin: pxtovw(65, 'pc') auto pxtovw(135, 'pc');
+		border-radius: pxtovw(5, 'pc');
+	}
+
+	@media screen and (max-width: #{$breakpoint-sp}px) {
+		padding: pxtovw(13, 'sp') 0;
+		margin-top: pxtovw(85, 'sp');
+		margin-bottom: pxtovw(30, 'sp');
+		background: repeating-linear-gradient(to right, rgba($theme2,0.2), rgba($theme2,0.2) pxtovw(16, 'sp'), rgba($theme2,0.4) pxtovw(16, 'sp'), rgba($theme2,0.4) pxtovw(32, 'sp'));
+	}
+
+	&__inner {
+		background-color: $white1;
+		padding-top: 45px;
+		padding-bottom: 35px;
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			padding-top: pxtovw(45, 'sp');
+			padding-bottom: pxtovw(35, 'sp');
+		}
+	}
+
+	&__ttl {
+		font-size: pxtorem(24, 'pc');
+		text-align: center;
+		font-family: $ff-mplus;
+		margin-bottom: 35px;
+		letter-spacing: 0.1em;
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			font-size: pxtorem(15, 'sp');
+			position: relative;
+			margin-top: pxtovw(-75, 'sp');
+		}
+	}
+
+	&__ttl-inner {
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			display: inline-block;
+			background-color: $white1;
+			padding: 0 pxtovw(20, 'sp');
+		}
+	}
+
+	&__ttl-color {
+		color: $theme2;
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			display: block;
+		}
+	}
+
+	&__contents {
+		display: flex;
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			display: block;
+		}
+	}
+
+	&__list {
+		display: flex;
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		&--3 {
+			width: calc(100% * 3 / 7);
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: 100%;
+			}
+		}
+
+		&--4 {
+			width: calc(100% * 4 / 7);
+			border-left: 1px dotted $black2;
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				border-left: none;
+				width: 100%;
+			}
+		}
+	}
+
+	&__list-item {
+		border-right: 1px dotted $black2;
+		width: calc(100% / 7);
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			border-right: none;
+		}
+
+		@at-root #{$host}__list--3 & {
+			width: calc(100% / 3);
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: calc(100% / 4);
+			}
+		}
+
+		@at-root #{$host}__list--4 & {
+			width: calc(100% / 4);
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				margin-top: pxtovw(10, 'sp');
+			}
+		}
+
+		&:last-of-type {
+			border-right: none;
+		}
+	}
+
+	&__list-img {
+		position: relative;
+		height: 120px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			height: 120px * 0.8;
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			height: pxtovw(55, 'sp');
+		}
+
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				transform: translate(-50%,-50%) scale(0.8);
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				transform: translate(-50%,-50%) scale(1);
+			}
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			&--1 img {
+				width: pxtovw(40, 'sp');
+			}
+
+			&--2 img {
+				width: pxtovw(46, 'sp');
+			}
+
+			&--3 img {
+				width: pxtovw(46, 'sp');
+			}
+
+			&--4 img {
+				width: pxtovw(50, 'sp');
+			}
+
+			&--5 img {
+				width: pxtovw(59, 'sp');
+			}
+
+			&--6 img {
+				width: pxtovw(59, 'sp');
+			}
+
+			&--7 img {
+				width: pxtovw(53, 'sp');
+			}
+		}
+	}
+
+	&__list-txt-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: calc(100% - 120px);
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			height: calc(100% - 96px);
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			height: calc(100% - 14.66667vw);
+		}
+	}
+
+	&__list-txt {
+		font-size: pxtorem(14, 'pc');
+		color: $black2;
+		text-align: center;
+		line-height: 1.3;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			font-size: pxtorem(12, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			font-size: pxtorem(10, 'sp');
+		}
+	}
+
+	&__list-txt-color {
+		color: $theme2;
+	}
+}
+
+/* ---------------------------------------------
+*   box-txt
+--------------------------------------------- */
+.box-txt {
+	background-color: $white1;
+	padding: 35px 55px;
+
+	@media screen and (max-width: #{$breakpoint-pc}px) {
+		padding: pxtovw(35, 'pc') pxtovw(55, 'pc');
+	}
+
+	@media screen and (max-width: #{$breakpoint-sp}px) {
+		padding: pxtovw(10, 'sp');
+	}
+
+	&__txt-b {
+		font-size: pxtorem(21, 'pc');
+		line-height: 1.6;
+		color: $theme2;
+		white-space: nowrap;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			font-size: pxtovw(21, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			font-size: pxtovw(21, 'sp');
+		}
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			display: block;
+		}
+	}
+
+	&__inner-txt {
+		border-left: 1px solid $black2;
+		padding: 15px;
+		padding-left: 70px;
+		margin-left: 70px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			padding: pxtovw(15, 'pc');
+			padding-left: pxtovw(70, 'pc');
+			margin-left: pxtovw(70, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			padding: 0;
+			margin: 0;
+			border-left: none;
+			margin-top: pxtovw(10, 'sp');
+		}
+	}
+
+	&__txt {
+		font-size: pxtorem(16, 'pc');
+	    line-height: 2;
+	    color: $black2;
+
+	    @media screen and (max-width: #{$breakpoint-pc}px) {
+	        font-size: pxtovw(16, 'pc');
+	        font-size: clamp(12px, 1.25vw, 16px);
+	    }
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	        font-size: pxtorem(13, 'sp');
+	    }
+	}
+}

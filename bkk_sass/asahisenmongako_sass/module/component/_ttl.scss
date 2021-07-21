@@ -1,0 +1,511 @@
+/* ---------------------------------------------
+*   c-ttl
+--------------------------------------------- */
+.c-ttl {
+	position: relative;
+    font-size: pxtorem(32, 'pc');
+    font-family: $ff-mplus;
+    margin-bottom: 120px;
+    color: $theme2;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    @media screen and (max-width: #{$breakpoint-pc}px) {
+    	font-size: pxtovw(32, 'pc');
+    	margin-bottom: pxtovw(120, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+    	font-size: pxtorem(16, 'sp');
+    	margin-bottom: pxtovw(120 * 0.52, 'sp');
+    }
+
+    &:before,
+    &:after {
+    	content: "";
+    	position: absolute;
+    	height: 6px;
+    	left: 50%;
+    	transform: translateX(-50%);
+    	bottom: -55px;
+
+    	@media screen and (max-width: #{$breakpoint-pc}px) {
+    		height: pxtovw(6, 'pc');
+    		bottom: pxtovw(-55, 'pc');
+    	}
+
+    	@media screen and (max-width: #{$breakpoint-sp}px) {
+    		height: pxtovw(6  * 0.52, 'sp');
+    		bottom: pxtovw(-20, 'sp');
+    	}
+    }
+
+    &:before {
+    	width: 134px;
+    	background-color: $theme2;
+
+    	@media screen and (max-width: #{$breakpoint-pc}px) {
+    		width: pxtovw(134, 'pc');
+    	}
+
+    	@media screen and (max-width: #{$breakpoint-sp}px) {
+    		width: pxtovw(134  * 0.52, 'sp');
+    	}
+    }
+
+    &:after {
+    	width: 44px;
+    	background-color: $theme1;
+
+    	@media screen and (max-width: #{$breakpoint-pc}px) {
+    		width: pxtovw(44, 'pc');
+    	}
+
+    	@media screen and (max-width: #{$breakpoint-sp}px) {
+    		width: pxtovw(44 * 0.52, 'sp');
+    	}
+    }
+}
+
+/*  c-head
+--------------------------------------------- */
+.c-head {
+	width: 100%;
+	height: 200px;
+	background-position: center center;
+	background-size: cover;
+
+	@media screen and (max-width: #{$breakpoint-pc}px) {
+		height: pxtovw(200, 'pc');
+	}
+
+	@media screen and (max-width: #{$breakpoint-sp}px) {
+		background-size: cover;
+		height: pxtovw(180, 'sp');
+	}
+
+	&--school {
+		background-image: url("../img/school/img_bg-ttl.jpg");
+	}
+
+	&--career {
+		background-image: url("../img/career/img_bg-ttl.jpg");
+	}
+
+	&--open {
+		background-image: url("../img/open/img_bg-ttl.jpg");
+	}
+
+	&--admission {
+		background-image: url("../img/admission/img_bg-ttl.jpg");
+	}
+
+	&--teacher {
+		background-image: url("../img/teacher/img_bg-ttl.jpg");
+	}
+
+	&--workers {
+		background-image: url("../img/workers/img_bg-ttl.jpg");
+	}
+
+	&--topics {
+		background-image: url("../img/topics/img_bg-ttl.jpg");
+	}
+
+	&__inner {
+		padding-top: 63px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			padding-top: pxtovw(63, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			padding-top: pxtovw(63, 'sp');
+		}
+	}
+
+	&__ttl {
+		font-family: $ff-mplus;
+		font-size: pxtorem(32, 'pc');
+		color: $black2;
+		text-align: center;
+		letter-spacing: 0.1em;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+	    	font-size: pxtovw(32, 'pc');
+	    }
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	font-size: pxtorem(16, 'sp');
+	    }
+	}
+
+	&__en-txt {
+		display: block;
+		font-family: $ff-dosis;
+		color: $theme1;
+		text-align: center;
+		font-size: pxtorem(18, 'pc');
+		letter-spacing: 0.2em;
+		margin-top: 10px;
+		font-weight: bold;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+	    	font-size: pxtovw(18, 'pc');
+	    	margin-top: pxtovw(10, 'pc');
+	    }
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	font-size: pxtorem(13, 'sp');
+	    }
+	}
+}
+
+/*  c-border-ttl
+--------------------------------------------- */
+.c-border-ttl {
+	position: relative;
+	font-size: pxtorem(21, 'pc');
+	font-family: $ff-mplus;
+	color: $theme1;
+	border-bottom: 2px dotted $theme1;
+	padding-left: 33px;
+	padding-bottom: 12px;
+	margin-bottom: 35px;
+	letter-spacing: 0.05em;
+
+	@media screen and (max-width: #{$breakpoint-pc}px) {
+    	font-size: pxtovw(21, 'pc');
+    	padding-left: pxtovw(33, 'pc');
+		padding-bottom: pxtovw(12, 'pc');
+		margin-bottom: pxtovw(35, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+    	font-size: pxtorem(14, 'sp');
+    	padding-left: pxtovw(20 , 'sp');
+    	padding-bottom: pxtovw(10, 'sp');
+    	margin-bottom: pxtovw(35 * 0.52, 'sp');
+    }
+
+	&:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 12px;
+		width: 20px;
+		height: 35px;
+		border-radius: 5px;
+		background-color: $theme1;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			bottom: pxtovw(12, 'pc');
+			width: pxtovw(20, 'pc');
+			height: pxtovw(35, 'pc');
+			border-radius: pxtovw(5, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			bottom: pxtovw(10, 'sp');
+			width: pxtovw(13, 'sp');
+			height: calc(100% - 2.66667vw);
+			border-radius: pxtovw(3, 'sp');
+		}
+	}
+}
+
+/*  c-box-ttl
+--------------------------------------------- */
+.c-box-ttl {
+	font-size: pxtorem(21, 'pc');
+
+	@media screen and (max-width: #{$breakpoint-pc}px) {
+    	font-size: pxtovw(21, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+    	font-size: pxtorem(14, 'sp');
+    }
+
+	&--red {
+		color: $theme1;
+	}
+
+	&--blue {
+		color: $theme2;
+	}
+
+	&--bold {
+		font-weight: bold;
+	}
+
+	&--center {
+		text-align: center;
+	}
+
+	&--mplus {
+		font-family: $ff-mplus;
+	}
+}
+
+/*  c-ttl-color
+--------------------------------------------- */
+.c-ttl-color {
+	position: relative;
+	font-size: pxtorem(42, 'pc');
+	font-family: $ff-mplus;
+	text-align: center;
+	letter-spacing: 0.1em;
+
+	@media screen and (max-width: #{$breakpoint-pc}px) {
+		font-size: pxtovw(42, 'pc');
+	}
+
+	@media screen and (max-width: #{$breakpoint-sp}px) {
+		font-size: pxtorem(18, 'sp');
+		text-align: left;
+	}
+
+	&--red {
+		color: $theme1;
+	}
+
+	&--blue {
+		color: $theme2;
+	}
+
+	&--black {
+		color: $black2;
+	}
+
+	&--s {
+		font-size: pxtorem(24, 'pc');
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+	    	font-size: pxtovw(24, 'pc');
+	    }
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	font-size: pxtorem(15, 'sp');
+	    }
+	}
+
+	&__txt {
+		font-size: pxtorem(34, 'pc');
+		color: $black2;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+	    	font-size: pxtovw(34, 'pc');
+	    }
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+			font-size: pxtorem(16, 'sp');
+		}
+	}
+}
+
+/*  c-ttl-sub-txt
+--------------------------------------------- */
+.c-ttl-sub {
+	text-align: center;
+
+	&__txt {
+		position: relative;
+		font-size: pxtorem(24, 'pc');
+		color: $black2;
+		font-family: $ff-mplus;
+		text-align: center;
+		display: inline-block;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+	    	font-size: pxtovw(24, 'pc');
+	    }
+
+	    @media screen and (max-width: #{$breakpoint-sp}px) {
+	    	font-size: pxtorem(15, 'sp');
+	    }
+
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			width: 40px;
+			height: 1px;
+			background-color: $black2;
+
+			@media screen and (max-width: #{$breakpoint-pc}px) {
+				width: pxtovw(40, 'pc');
+			}
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				width: pxtovw(20, 'sp');
+			}
+		}
+
+		&:before {
+			transform: translate(-50%) rotate(55deg);
+			left: -1.2em;
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				left: -1em;
+			}
+		}
+
+		&:after {
+			transform: translate(-50%) rotate(-55deg);
+			right: -2.7em;
+
+			@media screen and (max-width: #{$breakpoint-sp}px) {
+				right: -2.2em;
+			}
+		}
+	}
+}
+
+/*  c-ttl-icon
+--------------------------------------------- */
+.c-ttl-icon {
+	position: relative;
+	display: inline-block;
+
+	&--3 {
+		top: -45px;
+		width: 48px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			top: pxtovw(-45, 'pc');
+			width: pxtovw(48, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			top: pxtovw(-17, 'sp');
+			right: pxtovw(7, 'sp');
+			width: pxtovw(27, 'sp');
+		}
+	}
+
+	&--school {
+		top: -10px;
+		width: 97px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			top: pxtovw(-10, 'pc');
+			width: pxtovw(97, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			top: pxtovw(-5, 'sp');
+			width: pxtovw(50, 'sp');
+		}
+	}
+
+	&--topics {
+		width: 103px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			width: pxtovw(103, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			width: pxtovw(55, 'sp');
+		}
+	}
+
+	&--bus {
+		width: 91px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			width: pxtovw(91, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			width: pxtovw(45, 'sp');
+		}
+	}
+
+	&--tooth {
+		width: 117px;
+
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			width: pxtovw(117, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			width: pxtovw(59, 'sp');
+		}
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+
+/*  ttl-appeal
+--------------------------------------------- */
+.ttl-appeal {
+	padding-left: 100px;
+	width: 809px;
+	margin: 0 auto 140px;
+
+	@media screen and (max-width: #{$breakpoint-pc}px) {
+		width: pxtovw(809, 'pc');
+		padding-left: pxtovw(100, 'pc');
+		margin-bottom: pxtovw(140, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+    	width: pxtovw(261, 'sp');
+    	margin-bottom: pxtovw(85, 'sp');
+    	padding-left: 0;
+    }
+
+    img {
+    	width: 100%;
+    }
+}
+
+/*  ttl-movie
+--------------------------------------------- */
+.ttl-movie {
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 70px;
+	width: 547px;
+
+	@media screen and (max-width: #{$breakpoint-pc}px) {
+		margin-bottom: pxtovw(70, 'pc');
+		width: pxtovw(547, 'pc');
+	}
+
+	@media screen and (max-width: #{$breakpoint-sp}px) {
+		width: pxtovw(257, 'sp');
+		margin-bottom: pxtovw(45, 'sp');
+	}
+
+	img {
+    	width: 100%;
+    }
+}
+
+/*  ttl-facility
+--------------------------------------------- */
+.ttl-facility {
+	text-align: center;
+	position: relative;
+	width: 340px;
+	top: -60px;
+	margin: 0 auto;
+
+	@media screen and (max-width: #{$breakpoint-pc}px) {
+		top: pxtovw(-60, 'pc');
+		width: pxtovw(340, 'pc');
+	}
+
+	@media screen and (max-width: #{$breakpoint-sp}px) {
+		top: pxtovw(-15, 'sp');
+		width: pxtovw(168, 'sp');
+		margin-bottom: pxtovw(10, 'sp');
+	}
+}

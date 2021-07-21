@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* ==========================================================
+Name:
+    reset.css
+
+Description:
+    ユーザーエージェントスタイルの初期化を行う
+
+Contents:
+    base reset style
+    form parts reset style
+========================================================== */
+/* ---------------------------------------------
+*   base reset style
+--------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    font: inherit;
+    font-size: 100%;
+}
+
+html {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+caption, th, td {
+    vertical-align: middle;
+    text-align: left;
+    font-weight: normal;
+}
+
+q, blockquote {
+    quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+    clear: both;
+    content: "";
+    content: none;
+}
+
+a img {
+    border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+/* ---------------------------------------------
+*   form parts reset style
+--------------------------------------------- */
+input, button, textarea, select {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    background: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "meiryo", sans-serif;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+textarea {
+    display: block;
+    overflow: auto;
+    resize: none;
+}

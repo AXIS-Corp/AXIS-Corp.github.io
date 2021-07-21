@@ -1,0 +1,1337 @@
+/* ---------------------------------------------
+*   c-list
+--------------------------------------------- */
+.c-list {
+    $host: &;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: #{$breakpoint-pc}px) {
+        margin-bottom: pxtovw(30, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        display: block;
+    }
+
+    &__item {
+    	width: percentage(360/1200);
+        margin-right: percentage(60/1200);
+        margin-bottom: 60px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            margin-bottom: pxtovw(60, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: 100%;
+            margin-bottom: pxtovw(50, 'sp');
+        }
+
+        @at-root #{$host}--s & {
+            width: percentage(273/879);
+            margin-right: percentage(30/879);
+            margin-bottom: 30px;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                margin-bottom: pxtovw(30, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: pxtovw(50, 'sp');
+            }
+        }
+
+        &:nth-of-type(3n) {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        display: block;
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+            @include hover-opacity();
+        }
+    }
+
+    &__img {
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: percentage(125/355);
+        }
+
+        img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+
+    &__txt-area {
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(210, 'sp');
+        }
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+        margin-bottom: 15px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            margin-top: pxtovw(25, 'pc');
+            margin-bottom: pxtovw(15, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            display: block;
+            margin-top: 0;
+            margin-bottom: pxtovw(5, 'sp');
+        }
+
+        @at-root #{$host}--s & {
+            margin-top: 15px;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                margin-top: pxtovw(15, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                margin-top: pxtovw(10, 'sp');
+            }
+        }
+    }
+
+    &__date {
+        display: block;
+    	font-size: pxtorem(18, 'pc');
+    	color: $theme2;
+    	font-family: $ff-mplus;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(18, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(12, 'sp');
+            margin-bottom: pxtovw(5, 'sp');
+        }
+
+        @at-root #{$host}--s & {
+            font-size: pxtorem(13, 'pc');
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                font-size: pxtovw(13, 'pc');
+                font-size: clamp(11px, 1.01562vw, 13px);
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                font-size: pxtorem(12, 'sp');
+                margin-bottom: pxtovw(5, 'sp');
+            }
+        }
+    }
+
+    &__label {
+    	display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 226px;
+        height: 31px;
+        font-size: pxtorem(14, 'pc');
+        border: 1px solid;
+        margin-left: 1em;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(14, 'pc');
+            width: pxtovw(226, 'pc');
+            height: pxtovw(31, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(9, 'sp');
+            width: pxtovw(146, 'sp');
+            height: pxtovw(20, 'sp');
+            margin-left: 0;
+        }
+
+        @at-root #{$host}--s & {
+            width: 172px;
+            height: 24px;
+            font-size: pxtorem(12, 'pc');
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                font-size: pxtovw(12, 'pc');
+                width: pxtovw(172, 'pc');
+                height: pxtovw(24, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                font-size: pxtorem(9, 'sp');
+                width: pxtovw(146, 'sp');
+                height: pxtovw(20, 'sp');
+            }
+        }
+
+      &.open {
+          color: $theme2;
+          border-color: $theme2;
+      }
+
+      &.school {
+          color: $green1;
+          border-color: $green1;
+      }
+
+      &.news {
+          color: $black3;
+          border-color: $black3;
+      }
+
+      &.admission {
+          color: $theme1;
+          border-color: $theme1;
+      }
+  }
+
+  &__txt {
+        font-size: pxtorem(16, 'pc');
+        line-height: 1.8;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(16, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(10, 'sp');
+        }
+
+        @at-root #{$host}--s & {
+            font-size: pxtorem(14, 'pc');
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                font-size: pxtovw(14, 'pc');
+                font-size: clamp(12px, 1.09375vw, 14px);
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                font-size: pxtovw(10, 'sp');
+            }
+        }
+    }
+}
+
+/*  list-circle
+--------------------------------------------- */
+.list-circle {
+    $host: &;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: -135px;
+
+    @media screen and (max-width: #{$breakpoint-pc}px) {
+        margin-top: pxtovw(-135, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        flex-wrap: wrap;
+        width: pxtovw(330, 'sp');
+        margin: 0 auto;
+        margin-top: pxtovw(-80, 'sp');
+    }
+
+    &__item {
+        width: 268px;
+        height: 268px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(268, 'pc');
+            height: pxtovw(268, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(160, 'sp');
+            height: pxtovw(160, 'sp');
+            margin-bottom: pxtovw(12, 'sp');
+        }
+
+        &--1 {
+            background-image: url("../img/top/img_bg-circle_01.png");
+        }
+
+        &--2 {
+            background-image: url("../img/top/img_bg-circle_02.png");
+        }
+
+        &--3 {
+            background-image: url("../img/top/img_bg-circle_03.png");
+        }
+
+        &--4 {
+            background-image: url("../img/top/img_bg-circle_04.png");
+        }
+    }
+
+    &__link {
+        display: block;
+
+        @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+            @include hover-opacity();
+        }
+    }
+
+    &__icon {
+        position: relative;
+        height: 175px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            height: pxtovw(175, 'pc');
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            height: pxtovw(105, 'sp');
+        }
+
+        img {
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                width: 100%;
+            }
+        }
+
+        &--2 {
+            height: 165px;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                height: pxtovw(165, 'pc')
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                height: pxtovw(95, 'sp');
+            }
+        }
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            @at-root #{$host}__item--1 & {
+                width: pxtovw(106, 'pc');
+            }
+
+            @at-root #{$host}__item--2 & {
+                width: pxtovw(70, 'pc');
+            }
+
+            @at-root #{$host}__item--3 & {
+                width: pxtovw(116, 'pc');
+            }
+
+            @at-root #{$host}__item--4 & {
+                width: pxtovw(80, 'pc');
+            }
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            @at-root #{$host}__item--1 & {
+                width: pxtovw(64, 'sp');
+            }
+
+            @at-root #{$host}__item--2 & {
+                width: pxtovw(42, 'sp');
+            }
+
+            @at-root #{$host}__item--3 & {
+                width: pxtovw(68, 'sp');
+            }
+
+            @at-root #{$host}__item--4 & {
+                width: pxtovw(48, 'sp');
+            }
+        }
+    }
+
+    &__txt {
+        font-size: pxtorem(24, 'pc');
+        font-family: $ff-mplus;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(24, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(15, 'sp');
+        }
+
+        &--red {
+            color: $theme1;
+        }
+
+        &--blue {
+            color: $theme2;
+        }
+
+        &--sp-red {
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                color: $theme1;
+            }
+        }
+
+        &--sp-blue {
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                color: $theme2;
+            }
+        }
+    }
+}
+
+/*  list-card
+--------------------------------------------- */
+.list-card {
+    $host: &;
+    display: flex;
+    flex-wrap: wrap;
+
+    &--support {
+        margin-bottom: 30px;
+    }
+
+    &__item {
+        background-color: $white1;
+        width: percentage(380/1200);
+        margin-right: percentage(30/1200);
+        padding: 20px;
+        margin-bottom: 30px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            padding: pxtovw(20, 'pc');
+            margin-bottom: pxtovw(30, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: percentage(172.5/355);
+            margin-right: percentage(10/355);
+            margin-bottom: pxtovw(30, 'sp');
+            padding: pxtovw(10, 'sp');
+            padding-bottom: pxtovw(20, 'sp');
+        }
+
+        &:nth-of-type(3n) {
+            @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+                margin-right: 0;
+            }
+        }
+
+        &:nth-of-type(2n) {
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__img {
+        margin-bottom: 15px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            margin-bottom: pxtovw(15, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            margin-bottom: pxtovw(5, 'sp');
+        }
+    }
+
+    &__txt-l {
+        font-size: pxtorem(24, 'pc');
+        font-weight: bold;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(24, 'pc');
+            margin-bottom: pxtovw(20, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(15, 'sp');
+        }
+    }
+
+    &__txt-l-s {
+        font-size: pxtorem(18, 'pc');
+        margin-right: 1em;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(18, 'pc');
+            margin-bottom: pxtovw(20, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(13, 'sp');
+        }
+    }
+
+    &__txt-b-l {
+        font-size: pxtorem(21, 'pc');
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: $theme2;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(21, 'pc');
+            margin-bottom: pxtovw(10, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(14, 'sp');
+        }
+    }
+
+    &__txt-b {
+        font-size: pxtorem(18, 'pc');
+        font-weight: bold;
+        color: $theme2;
+        line-height: 2;
+        margin-bottom: 10px;
+        letter-spacing: 0.05em;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(18, 'pc');
+            margin-bottom: pxtovw(10, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(13, 'sp');
+            line-height: 1.5;
+        }
+
+        &--s {
+            font-size: pxtorem(16, 'pc');
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                font-size: pxtovw(16, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                font-size: pxtorem(11, 'sp');
+            }
+        }
+
+        &--sp-s {
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                font-size: pxtorem(11, 'sp');
+            }
+        }
+
+        @at-root #{$host}--support & {
+            margin-bottom: 0;
+        }
+    }
+
+    &__txt-b-m {
+        display: block;
+        font-size: pxtorem(16, 'pc');
+        color: $theme2;
+        margin-bottom: 7px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(16, 'pc');
+            margin-bottom: pxtovw(7, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(11, 'sp');
+            margin-bottom: pxtovw(3, 'sp');
+        }
+    }
+
+    &__txt-b-s {
+        display: block;
+        font-size: pxtorem(14, 'pc');
+        color: $theme2;
+        margin-bottom: 15px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(14, 'pc');
+            margin-bottom: pxtovw(15, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(10, 'sp');
+        }
+    }
+
+    &__txt {
+        font-size: pxtorem(16, 'pc');
+        line-height: 2;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(16, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(11, 'sp');
+        }
+    }
+
+    &__txt-s {
+        font-size: pxtorem(15, 'pc');
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(15, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(10, 'sp');
+        }
+    }
+}
+
+/*  list-block
+--------------------------------------------- */
+.list-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 75px;
+
+    @media screen and (max-width: #{$breakpoint-pc}px) {
+        margin-top: pxtovw(75, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        margin-top: pxtovw(40, 'sp');
+    }
+
+    &__item {
+        width: percentage(550/1200);
+        margin-right: percentage(100/1200);
+        margin-bottom: 70px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            margin-bottom: pxtovw(70, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: percentage(172.5/355);
+            margin-right: percentage(10/355);
+            margin-bottom: pxtovw(30, 'sp');
+        }
+
+        &:nth-of-type(2n) {
+            margin-right: 0;
+        }
+    }
+
+    &__img {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 30px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            padding-left: pxtovw(10, 'pc');
+            margin-bottom: pxtovw(30, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            padding-left: pxtovw(5, 'sp');
+            margin-bottom: pxtovw(5, 'sp');
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: calc(100% - 20px);
+            height: 100%;
+            top: -20px;
+            left: 0px;
+            border: 1px solid $theme1;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                width: calc(100% - 1.5625vw);
+                top: - 1.5625vw;
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                top: pxtovw(-5, 'sp');
+                width: calc(100% - 1.33333vw);
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &__txt-b {
+        font-size: pxtorem(18, 'pc');
+        color: $theme2;
+        margin-bottom: 20px;
+        font-weight: bold;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(18, 'pc');
+            margin-bottom: pxtovw(20, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(13, 'sp');
+        }
+    }
+
+    &__txt-b-s {
+        font-size: pxtorem(16, 'pc');
+        font-weight: normal;
+        margin-left: 1em;
+        color: $theme2;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(16, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(11, 'sp');
+        }
+    }
+
+    &__txt {
+        font-size: pxtorem(16, 'pc');
+        line-height: 2;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(16, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(11, 'sp');
+        }
+    }
+}
+
+/*  list-date
+--------------------------------------------- */
+.list-date {
+    $host: &;
+    display: flex;
+    flex-wrap: wrap;
+
+    &--l {
+        justify-content: center;
+    }
+
+    &--2 {
+        justify-content: center;
+    }
+
+    &__item {
+        width: 180px;
+        background-color: $white1;
+        border-radius: 15px;
+        margin-right: 13px;
+        margin-bottom: 13px;
+        padding: 10px;
+        padding-bottom: 13px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(180, 'pc');
+            border-radius: pxtovw(15, 'pc');
+            margin-right: pxtovw(13, 'pc');
+            margin-bottom: pxtovw(13, 'pc');
+            padding: pxtovw(10, 'pc');
+            padding-bottom: pxtovw(13, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(110, 'sp');
+            border-radius: pxtovw(15, 'sp');
+            margin-right: pxtovw(9, 'sp');
+            margin-bottom: pxtovw(8, 'sp');
+            padding: pxtovw(10, 'sp') pxtovw(7, 'sp');
+        }
+
+        @at-root #{$host}--l & {
+            width: 318px;
+            padding: 30px 20px;
+            margin-right: 23px;
+            margin-bottom: 23px;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                width: pxtovw(318, 'pc');
+                padding: pxtovw(30, 'pc') pxtovw(20, 'pc');
+                margin-right: pxtovw(23, 'pc');
+                margin-bottom: pxtovw(23, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                width: pxtovw(110, 'sp');
+                border-radius: pxtovw(15, 'sp');
+                margin-right: pxtovw(9, 'sp');
+                margin-bottom: pxtovw(8, 'sp');
+                padding: pxtovw(10, 'sp') pxtovw(7, 'sp');
+            }
+        }
+
+        &:nth-of-type(3n) {
+            margin-right: 0;
+
+            @at-root #{$host}--2 & {
+                margin-right: 13px;
+
+                @media screen and (max-width: #{$breakpoint-pc}px) {
+                    margin-right: pxtovw(13, 'pc');
+                }
+
+                @media screen and (max-width: #{$breakpoint-sp}px) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    &__txt {
+        color: $theme2;
+        font-size: pxtorem(18, 'pc');
+        font-weight: bold;
+        font-family: $ff-mplus;
+        padding-bottom: 5px;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(18, 'pc');
+            padding-bottom: pxtovw(5, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(12, 'sp');
+            padding-bottom: pxtovw(5, 'sp');
+        }
+
+        @at-root #{$host}--l & {
+            font-size: pxtorem(32, 'pc');
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                font-size: pxtovw(32, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                font-size: pxtorem(12, 'sp');
+                padding-bottom: pxtovw(5, 'sp');
+            }
+        }
+    }
+
+    &__txt-l {
+        font-size: pxtorem(36, 'pc');
+        margin-right: 5px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(36, 'pc');
+            margin-right: pxtovw(5, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(22, 'sp');
+        }
+
+        @at-root #{$host}--l & {
+            font-size: pxtorem(62, 'pc');
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                font-size: pxtovw(62, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                font-size: pxtorem(22, 'sp');
+            }
+        }
+    }
+
+    &__txt-time {
+        font-size: pxtorem(22, 'pc');
+        color: $black2;
+        font-weight: bold;
+        font-family: $ff-mplus;
+        border-top: 1px solid $black2;
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(22, 'pc');
+            padding-top: pxtovw(10, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(13, 'sp');
+        }
+
+        @at-root #{$host}--l & {
+            font-size: pxtorem(39, 'pc');
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                font-size: pxtovw(39, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                font-size: pxtorem(13, 'sp');
+            }
+        }
+
+        @at-root #{$host}--2 & {
+            padding-top: 10px;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                padding-top: pxtovw(10, 'pc');
+            }
+        }
+    }
+
+    &__txt-time-icon {
+        display: block;
+        width: 16px;
+        height: 8px;
+        line-height: 0;
+        margin: 0 5px 0 8px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(16, 'pc');
+            height: pxtovw(8, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(20, 'sp');
+            height: pxtovw(5, 'sp');
+            margin: 0 pxtovw(2, 'sp');
+        }
+
+        @at-root #{$host}--l & {
+            width: 27px;
+            height: 14px;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                width: pxtovw(27, 'pc');
+                height: pxtovw(14, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                width: pxtovw(20, 'sp');
+                height: pxtovw(5, 'sp');
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/*  list-link
+--------------------------------------------- */
+.list-link {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        flex-wrap: wrap;
+        width: pxtovw(345, 'sp');
+        margin: 0 auto;
+    }
+
+    &__item {
+        position: relative;
+        width: percentage(295/1200);
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(168, 'sp');
+            margin-bottom: pxtovw(40, 'sp');
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__link {
+        display: block;
+
+        @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+            @include hover-opacity();
+        }
+    }
+
+    &__txt {
+        position: absolute;
+        bottom: -47px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: pxtorem(16, 'pc');
+        background-color: $white1;
+        color: $theme2;
+        font-weight: bold;
+        width: 232px;
+        height: 66px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 5px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            bottom: pxtovw(-47, 'pc');
+            font-size: pxtovw(16, 'pc');
+            width: pxtovw(232, 'pc');
+            height: pxtovw(66, 'pc');
+            border-radius: pxtovw(5, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(11, 'sp');
+            width: pxtovw(145, 'sp');
+            height: pxtovw(35, 'sp');
+            border-radius: pxtovw(5, 'sp');
+            bottom: pxtovw(-25, 'sp');
+        }
+    }
+
+    &__txt-icon {
+        display: block;
+        width: 17px;
+        height: 20px;
+        background: url("../img/common/icon_open-blue.svg") 0 0 no-repeat;
+        background-size: 100% auto;
+        margin-left: 15px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(17, 'pc');
+            height: pxtovw(20, 'pc');
+            margin-left: pxtovw(15, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(10, 'sp');
+            height: pxtovw(12, 'sp');
+            margin-left: pxtovw(10, 'sp');
+            background-image: url("../img/common/sp/icon_open-blue.svg");
+        }
+    }
+}
+
+/*  list-txt-num
+--------------------------------------------- */
+.list-txt-num {
+    margin-left: 370px;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: #{$breakpoint-pc}px) {
+        margin-left: pxtovw(370, 'pc');
+        margin-bottom: pxtovw(40, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        margin-left: 0;
+        margin-bottom: pxtovw(40, 'sp');
+    }
+
+    &__item {
+        display: flex;
+        align-items: baseline;
+    }
+
+    &__txt-l {
+        font-size: pxtorem(47, 'pc');
+        color: $theme1;
+        font-family: $ff-mplus;
+        margin-right: 15px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(47, 'pc');
+            margin-right: pxtovw(15, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(24, 'sp');
+        }
+    }
+
+    &__txt {
+        font-size: pxtorem(24, 'pc');
+        font-weight: bold;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(24, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(15, 'sp');
+        }
+    }
+}
+
+/*  list-point
+--------------------------------------------- */
+.list-point {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        display: block;
+        margin-top: pxtovw(100, 'sp');
+    }
+
+    &__item {
+        position: relative;
+        width: percentage(550/1200);
+        margin-right: percentage(100/1200);
+        margin-bottom: 135px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            margin-bottom: pxtovw(135, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            margin-bottom: pxtovw(75, 'sp');
+            width: 100%;
+            margin-right: 0;
+        }
+
+        &:nth-of-type(2n) {
+            margin-right: 0;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: -95px;
+            left: 20px;
+            z-index: 1;
+            width: 111px;
+            height: 122px;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: 0 0;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                top: pxtovw(-95, 'pc');
+                left: pxtovw(20, 'pc');
+                width: pxtovw(111, 'pc');
+                height: pxtovw(122, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                width: pxtovw(56, 'sp');
+                height: pxtovw(61, 'sp');
+                top: pxtovw(-50, 'sp');
+                left: 50%;
+                transform: translate(-50%);
+            }
+        }
+
+        &--1 {
+            &:before {
+                background-image: url("../img/common/img_point_01.png");
+            }
+        }
+
+        &--2 {
+            &:before {
+                background-image: url("../img/common/img_point_02.png");
+            }
+        }
+
+        &--3 {
+            &:before {
+                background-image: url("../img/common/img_point_03.png");
+            }
+        }
+
+        &--4 {
+            &:before {
+                background-image: url("../img/common/img_point_04.png");
+            }
+        }
+
+        &--5 {
+            &:before {
+                background-image: url("../img/common/img_point_05.png");
+            }
+        }
+
+        &--6 {
+            &:before {
+                background-image: url("../img/common/img_point_06.png");
+            }
+        }
+
+        &--7 {
+            &:before {
+                background-image: url("../img/common/img_point_07.png");
+            }
+        }
+
+        &--8 {
+            &:before {
+                background-image: url("../img/common/img_point_08.png");
+            }
+        }
+
+        &--9 {
+            &:before {
+                background-image: url("../img/common/img_point_09.png");
+            }
+        }
+    }
+
+    &__img {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 30px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            padding-left: pxtovw(20, 'pc');
+            margin-bottom: pxtovw(30, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            padding-left: pxtovw(5, 'sp');
+            margin-bottom: pxtovw(5, 'sp');
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: calc(100% - 20px);
+            height: 100%;
+            top: -20px;
+            left: 0;
+            border: 1px solid $theme1;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                top: pxtovw(-20, 'pc');
+                width: calc(100% - 1.5625vw);
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                top: pxtovw(-5, 'sp');
+                width: calc(100% - 1.33333vw);
+            }
+        }
+    }
+
+    &__txt-b {
+        font-size: pxtorem(18, 'pc');
+        color: $theme2;
+        font-weight: bold;
+        margin-bottom: 25px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(18, 'pc');
+            margin-bottom: pxtovw(25, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(13, 'sp');
+            margin-bottom: pxtovw(5, 'sp');
+        }
+    }
+
+    &__txt {
+        font-size: pxtorem(16, 'pc');
+        line-height: 2;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(16, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            font-size: pxtorem(11, 'sp');
+        }
+    }
+}
+
+/*  list-map
+--------------------------------------------- */
+.list-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        justify-content: space-between;
+        margin: pxtovw(30, 'sp') 0;
+    }
+
+    &__item {
+        &--1 {
+            width: 245px;
+            margin-top: 10px;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                width: pxtovw(245, 'pc');
+                margin-top: pxtovw(10, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                width: pxtovw(245 * 0.4, 'sp');
+                margin-top: pxtovw(5, 'sp');
+            }
+        }
+
+        &--2 {
+            width: 270px;
+            margin-left: 130px;
+            margin-top: 40px;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                width: pxtovw(270, 'pc');
+                margin-top: pxtovw(40, 'pc');
+                margin-left: pxtovw(130, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                margin-left: 0;
+                margin-right: pxtovw(-30, 'sp');
+                margin-top: pxtovw(20, 'sp');
+                width: pxtovw(270 * 0.4, 'sp');
+            }
+        }
+
+        &--3 {
+            width: 350px;
+            margin-left: 80px;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                width: pxtovw(350, 'pc');
+                margin-left: pxtovw(80, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                width: pxtovw(350 * 0.4, 'sp');
+                margin-left: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,235 @@
+
+@import 'partial/pxtovw';
+@import 'partial/pxtorem';
+@import 'config';
+@import 'plugin/efo';
+
+.c-section {
+	&--faq-1 {
+		padding-top: 170px;
+		padding-bottom: 120px;
+        z-index: 2;
+        background-color: $white1;
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			padding-top: pxtovw(170, 'pc');
+			padding-bottom: pxtovw(120, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			padding-top: pxtovw(170 * 0.52, 'sp');
+			padding-bottom: pxtovw(120 * 0.52, 'sp');
+		}
+	}
+	&--faq-2,
+    &--faq-3 {
+		padding-top: 120px;
+		padding-bottom: 120px;
+        z-index: 2;
+        background-color: $white1;
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			padding-top: pxtovw(120, 'pc');
+			padding-bottom: pxtovw(120, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			padding-top: pxtovw(120 * 0.52, 'sp');
+			padding-bottom: pxtovw(120 * 0.52, 'sp');
+		}
+	}
+    &--contact-1 {
+		padding-top: 130px;
+		padding-bottom: 120px;
+        z-index: 2;
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			padding-top: pxtovw(130, 'pc');
+			padding-bottom: pxtovw(120, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			padding-top: pxtovw(130 * 0.52, 'sp');
+			padding-bottom: pxtovw(120 * 0.52, 'sp');
+		}
+	}
+    &--privacy-1 {
+		padding-top: 110px;
+		padding-bottom: 120px;
+        z-index: 2;
+		@media screen and (max-width: #{$breakpoint-pc}px) {
+			padding-top: pxtovw(110, 'pc');
+			padding-bottom: pxtovw(120, 'pc');
+		}
+
+		@media screen and (max-width: #{$breakpoint-sp}px) {
+			padding-top: pxtovw(110 * 0.52, 'sp');
+			padding-bottom: pxtovw(120 * 0.52, 'sp');
+		}
+        .c-txt,
+        .privacy-single__blue {
+            font-family: "meiryo", "メイリオ", sans-serif;
+        }
+	}
+}
+
+.privacy-single {
+    margin-bottom: 65px;
+    @media screen and (max-width: #{$breakpoint-pc}px) {
+        margin-bottom: pxtovw(65, 'pc');
+    }
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        margin-bottom: pxtovw(65 * 0.52, 'sp');
+    }
+    &:last-child {
+        margin-bottom: 0;
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            margin-bottom: 0;
+        }
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            margin-bottom:  0;
+        }
+    }
+    &__blue {
+        color: $theme2;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    &__graylink {
+        color: $black2;
+        font-size: 16px;
+        font-weight: 400;
+        position: relative;
+        text-decoration: underline;
+        margin-left: 40px;
+        &::after {
+            content: url(../img/common/icon_link.svg);
+            position: absolute;
+            right: -30px;
+            top: 0px;
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                right: -18px;
+                transform: scale(0.6);
+            }
+        }
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            margin-left: 0;
+        }
+    }
+    ul {
+        list-style: disc;
+        padding-left: 2.6rem;
+    }
+}
+
+
+// Accordion Button
+
+.acc-btn {
+    width: 100%;
+    position: relative;
+    background-color: $white1;
+    color: $black2;
+    font-size: pxtorem(21, 'pc');
+    cursor: pointer;
+    margin-bottom: 11px;
+    &--q {
+        font-weight: 700;
+        padding: 27px 80px 21px 100px;
+        &::before {
+            content: 'Q.';
+        }
+
+    }
+    .plus-sign {
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        right: 35.5px;
+        top: 39px;
+        &::after {
+            content: '';
+            width: 2px;
+            height: 30px;
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all ease-in-out .3s;
+        }
+        &--white,
+        &--white::after {
+            background-color: $white1;
+        }
+        &--black,
+        &--black::after {
+            background-color: $black2;
+        }
+        &.rotate::after {
+            transform: translateX(-50%) rotate(-90deg);
+        }
+    }
+    &--pink {
+        background-color: $pink1;
+        color: $white1;
+    }
+    &--yellow {
+        background-color: $yellow1;
+        color: $black2;
+    }
+    &--blue {
+        background-color: $theme2;
+        color: $white1;
+    }
+    &--a {
+        background-color: $white1;
+        color: $black2;
+        font-size: pxtorem(18, 'pc');
+        display: none;
+        padding: 30px 5rem 35px 100px;
+        position: relative;
+        p {
+            line-height: 2;
+            opacity: 0;
+            transition: opacity ease-in-out .7s;
+        }
+        &::before {
+            content: 'A.';
+            color: $theme1;
+            opacity: 0;
+            transition: opacity ease-in-out .7s;
+        }
+    }
+    &--a::before,
+    &--q::before {
+        font-family: $ff-mplus;
+        font-size: pxtorem(54, 'pc');
+        position: absolute;
+        left: 30px;
+        top: 0;
+    }
+    .reveal-a {
+        p {
+            opacity: 1;
+            transition: opacity ease-in-out .7s;
+        }
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+.contact-oc__uketsuke {
+    color: $black2;
+    font-family: 'メイリオ', 'Meiryo', sans-serif;
+    font-size: 18px;
+    border-left: 1px solid $black2;
+    padding: 11px 0 11px 30px;
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        display: block;
+        padding: 0;
+        text-align: center;
+        border: none;
+    }
+}
+.contents-oc__contact-tel.contents-oc__contact-tel--contact-page {
+    margin-right: 30px;
+}

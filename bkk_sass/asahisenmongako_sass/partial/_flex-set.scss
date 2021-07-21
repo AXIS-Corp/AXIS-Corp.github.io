@@ -1,0 +1,64 @@
+/// flex set
+/// フレックスボックスのスタイル
+/// @include flex(justify-content, flex-wrap, align-items);
+@mixin flex($content: 'start', $wrap: null, $align: null) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    @if $content == 'start' {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+    }
+    @else if $content == 'justify' {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+    @else if $content == 'center' {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+    @else if $content == 'end' {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+    }
+
+    @if $wrap != null {
+        @if $wrap == 'nowrap' {}
+    }
+    @else {
+        -ms-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    @if $align != null {
+        @if $align == 'start' {
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            -webkit-align-items: flex-start;
+            align-items: flex-start;
+        }
+        @if $align == 'center' {
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        @if $align == 'end' {
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: flex-end;
+            align-items: flex-end;
+        }
+    }
+    @else {}
+}

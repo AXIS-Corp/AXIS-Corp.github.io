@@ -1,0 +1,568 @@
+@charset "UTF-8";
+/* 基本設定 */
+/* 親要素に追加するクラス：説明
+1. リセット・ディフォルト機能
+2. div.inline-block : 項目を
+
+*/
+/* --------------------------------------------------- */
+/* デフォルト設定 */
+/* ボーダー・幅・外枠のマージンとパディング・タイトル */
+form.inner-efo-default-theme fieldset {
+  border: none;
+  border-radius: 0;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 800px;
+  width: 93vw;
+}
+
+/* タイトル */
+form.inner-efo-default-theme legend {
+  display: none;
+}
+
+/* 必須アイコン */
+/* 必須アイコンの設定はタイトルに依存するので、デフォルト価値編集せず */
+form.inner-efo-default-theme .required-icon {
+  color: #fff;
+  background-color: #C44303;
+  padding: 1px 6px;
+  margin: 0 0 0 18px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  vertical-align: text-bottom;
+  position: relative;
+  bottom: 3px;
+  display: none;
+}
+
+/* テキスト入力（複数行）リサイズオッフ */
+form.inner-efo-default-theme .bl-item textarea {
+  resize: none;
+}
+
+/* ラベルオプション */
+/* 必須アイコンを位置させるためにpositionをrelativeにする */
+/* p.font-size-m　と label.font-size-mが存在する */
+form.inner-efo-default-theme .ttl-item label.font-size-m.mb6,
+form.inner-efo-default-theme .ttl-item p.font-size-m.mb6 {
+  color: #302D2C;
+  font: 400 18px "メイリオ", Meiryo, sans-serif;
+  margin: 0 0 6px 0;
+  position: relative;
+}
+
+form.inner-efo-default-theme .bl-item,
+form.inner-efo-default-theme .ttl-item {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* 項目ごとのオプション */
+/* margin: 0 でリセット */
+form.inner-efo-default-theme .field {
+  margin: 0 0 35px;
+  position: relative;
+}
+
+/* 入力 */
+/* 全体的な設定 */
+form.inner-efo-default-theme .field .bl-item input:not(.efo-col-5),
+form.inner-efo-default-theme .field .bl-item textarea {
+  background: #fff;
+  border: 1px solid #d3d3d9;
+  width: 100%;
+  font-size: 0.975rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0 1em;
+}
+
+form.inner-efo-default-theme .field .bl-item input:not(.efo-col-5),
+form.inner-efo-default-theme .field .bl-item input[type=text],
+form.inner-efo-default-theme .field .bl-item > .select select {
+  height: 2.6rem;
+}
+
+form.inner-efo-default-theme .field .bl-item textarea {
+  padding: 1em;
+}
+
+form.inner-efo-default-theme .field .bl-item input:not(.input-s-width):not(.efo-datepicker) {
+  padding: 0 1em;
+}
+
+/* 入力　マウスオバー・フォーカス */
+form.inner-efo-default-theme input:hover,
+form.inner-efo-default-theme textarea:hover,
+form.inner-efo-default-theme input:not(:disabled):hover,
+form.inner-efo-default-theme textarea:not(:disabled):hover {
+  color: inherit;
+  background: #fafafa;
+  border-color: #bebec3;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+form.inner-efo-default-theme input:focus,
+form.inner-efo-default-theme textarea:focus,
+form.inner-efo-default-theme input:not(:disabled):focus,
+form.inner-efo-default-theme textarea:not(:disabled):focus {
+  color: inherit;
+  background: #fafafa;
+  border-color: #165E83;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/* テキスト表示 */
+/* form.inner-efo-default-theme .field .bl-item textarea[readonly="readonly"]{} */
+/* チェックボックス */
+/* inline-block */
+form.inner-efo-default-theme label.control.checkbox {
+  display: inline-flex;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+form.inner-efo-default-theme label.control.checkbox:nth-child(n+2) {
+  margin: 0 0 0 20px;
+}
+
+form.inner-efo-default-theme label.control.checkbox .control-label {
+  margin: 0 0 0 5px;
+}
+
+form.inner-efo-default-theme .control.checkbox .control-indicator {
+  border-radius: 2px;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+/* チェックボックスの背景色に!importantを付ける必要ある */
+form.inner-efo-default-theme .control.checkbox input[type=checkbox]:checked ~ .control-indicator {
+  background-color: red !important;
+  border-color: black !important;
+  /* チェックボックスのサイズは background-size で変更出来る */
+  /* background-size: 90%; */
+}
+
+/* セレクトボックス */
+form.inner-efo-default-theme .field .bl-item > .select select {
+  background: #fff;
+  border: 1px solid #d3d3d9;
+  font-size: 0.975rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0 1em;
+}
+
+/* ラジオボタン */
+/* これは〇の形にするコード。色だけにしたい場合content: none; にする */
+form.inner-efo-default-theme label.control.radio {
+  display: inline-flex;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+form.inner-efo-default-theme label.control.radio:nth-child(n+2) {
+  margin: 0 0 0 20px;
+}
+
+form.inner-efo-default-theme label.control.radio .control-label {
+  margin: 0 0 0 5px;
+}
+
+form.inner-efo-default-theme .control.radio input[type=radio]:checked ~ .control-indicator:before {
+  /* content: none; */
+  width: 0.5em;
+  height: 0.5em;
+  background: #fff;
+  border-radius: 1.5rem;
+}
+
+form.inner-efo-default-theme .control.info input:checked ~ .control-indicator {
+  background-color: #00ACD5 !important;
+  border-color: #00ACD5 !important;
+}
+
+/* 生年月日・月時ピッカー ・住所*/
+/* efo-col-5 は郵便番号と都道府県の独特のクラス */
+/* .flatpickr-input は日付の独特のクラス */
+form.inner-efo-default-theme .flatpickr-input,
+form.inner-efo-default-theme .efo-col-5 {
+  min-width: 120px;
+  max-width: 140px;
+  width: 20%;
+}
+
+form.inner-efo-default-theme .input-s-width {
+  max-width: none;
+  padding: 0 3px;
+}
+
+form.inner-efo-default-theme .after-text {
+  display: block;
+  margin-right: 15px;
+  padding: 6px;
+}
+
+/* ボタン */
+form.inner-efo-default-theme .button-primary.btn-confirm,
+form.inner-efo-default-theme .button-primary.btn-submit,
+form.inner-efo-default-theme .clear-btn {
+  -ms-flex-align: center;
+  width: 260px;
+  height: 55px;
+  border-radius: 100px;
+  background-color: #00ACD5;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.25rem;
+  -webkit-transition: color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  transition: color 0.3s;
+  transition: all 0.3s;
+  border: none;
+}
+
+form.inner-efo-default-theme .button-primary.btn-submit:hover {
+  background-color: #E9EC89;
+  color: #302D2C;
+}
+
+.clear-btn {
+  background-color: #E45560 !important;
+  opacity: 0.7;
+  color: #fff !important;
+  border-radius: 100px;
+}
+
+.clear-btn:hover {
+  opacity: 0.4;
+}
+
+form.inner-efo-default-theme .button-primary.btn-confirm:not(:disabled):focus,
+form.inner-efo-default-theme .button-primary.btn-confirm:not(:disabled):hover {
+  background-color: #E9EC89;
+  color: #302D2C;
+}
+
+form.inner-efo-default-theme .button-primary.btn-submit:not(:disabled):focus,
+form.inner-efo-default-theme .button-primary.btn-submit:not(:disabled):hover {
+  color: #fff;
+  background: #165E83;
+  border-color: #165E83;
+}
+
+form.inner-efo-default-theme .button-primary.btn-cancel {
+  color: white;
+  background-color: #6b6b6b;
+  border-color: #6b6b6b;
+  -ms-flex-align: center;
+  width: 260px;
+  height: 55px;
+  border-radius: 100px;
+  font-weight: bold;
+  font-size: 1.25rem;
+  -webkit-transition: color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  transition: color 0.3s;
+  transition: all 0.3s;
+}
+
+form.inner-efo-default-theme .button-primary.btn-cancel:not(:disabled):focus,
+form.inner-efo-default-theme .button-primary.btn-cancel:not(:disabled):hover {
+  color: #6b6b6b;
+  background-color: white;
+  border-color: #6b6b6b;
+}
+
+fieldset.js-efo-inner-jenavdnaxw > div:last-child {
+  display: flex;
+  justify-content: center;
+  gap: 0 20px;
+}
+
+form.inner-efo-default-theme .field {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+}
+
+form.inner-efo-default-theme .ttl-item {
+  flex: 0 1 230px;
+}
+
+form.inner-efo-default-theme .bl-item {
+  flex: 1 0 235px;
+}
+
+form.inner-efo-default-theme .field:last-child .ttl-item,
+form.inner-efo-default-theme .field:last-child .bl-item {
+  flex: 1 0 100%;
+}
+
+@media screen and (max-width: 767px) {
+  form.inner-efo-default-theme .ttl-item,
+form.inner-efo-default-theme .bl-item,
+form.inner-efo-default-theme .field:last-child .ttl-item,
+form.inner-efo-default-theme .field:last-child .bl-item {
+    flex: 0 1 100%;
+  }
+
+  fieldset.js-efo-inner-jenavdnaxw > div:last-child {
+    flex-flow: row wrap;
+  }
+}
+.c-section--faq-1 {
+  padding-top: 170px;
+  padding-bottom: 120px;
+  z-index: 2;
+  background-color: #fff;
+}
+@media screen and (max-width: 1280px) {
+  .c-section--faq-1 {
+    padding-top: 13.28125vw;
+    padding-bottom: 9.375vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .c-section--faq-1 {
+    padding-top: 23.5733333333vw;
+    padding-bottom: 16.64vw;
+  }
+}
+.c-section--faq-2, .c-section--faq-3 {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  z-index: 2;
+  background-color: #fff;
+}
+@media screen and (max-width: 1280px) {
+  .c-section--faq-2, .c-section--faq-3 {
+    padding-top: 9.375vw;
+    padding-bottom: 9.375vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .c-section--faq-2, .c-section--faq-3 {
+    padding-top: 16.64vw;
+    padding-bottom: 16.64vw;
+  }
+}
+.c-section--contact-1 {
+  padding-top: 130px;
+  padding-bottom: 120px;
+  z-index: 2;
+}
+@media screen and (max-width: 1280px) {
+  .c-section--contact-1 {
+    padding-top: 10.15625vw;
+    padding-bottom: 9.375vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .c-section--contact-1 {
+    padding-top: 18.0266666667vw;
+    padding-bottom: 16.64vw;
+  }
+}
+.c-section--privacy-1 {
+  padding-top: 110px;
+  padding-bottom: 120px;
+  z-index: 2;
+}
+@media screen and (max-width: 1280px) {
+  .c-section--privacy-1 {
+    padding-top: 8.59375vw;
+    padding-bottom: 9.375vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .c-section--privacy-1 {
+    padding-top: 15.2533333333vw;
+    padding-bottom: 16.64vw;
+  }
+}
+.c-section--privacy-1 .c-txt,
+.c-section--privacy-1 .privacy-single__blue {
+  font-family: "meiryo", "メイリオ", sans-serif;
+}
+
+.privacy-single {
+  margin-bottom: 65px;
+}
+@media screen and (max-width: 1280px) {
+  .privacy-single {
+    margin-bottom: 5.078125vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .privacy-single {
+    margin-bottom: 9.0133333333vw;
+  }
+}
+.privacy-single:last-child {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 1280px) {
+  .privacy-single:last-child {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .privacy-single:last-child {
+    margin-bottom: 0;
+  }
+}
+.privacy-single__blue {
+  color: #00ACD5;
+  font-size: 18px;
+  font-weight: 700;
+}
+.privacy-single__graylink {
+  color: #707070;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  text-decoration: underline;
+  margin-left: 40px;
+}
+.privacy-single__graylink::after {
+  content: url(../img/common/icon_link.svg);
+  position: absolute;
+  right: -30px;
+  top: 0px;
+}
+@media screen and (max-width: 767px) {
+  .privacy-single__graylink::after {
+    right: -18px;
+    transform: scale(0.6);
+  }
+}
+@media screen and (max-width: 767px) {
+  .privacy-single__graylink {
+    margin-left: 0;
+  }
+}
+.privacy-single ul {
+  list-style: disc;
+  padding-left: 2.6rem;
+}
+
+.acc-btn {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  color: #707070;
+  font-size: 1.3125rem;
+  cursor: pointer;
+  margin-bottom: 11px;
+}
+.acc-btn--q {
+  font-weight: 700;
+  padding: 27px 80px 21px 100px;
+}
+.acc-btn--q::before {
+  content: "Q.";
+}
+.acc-btn .plus-sign {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  right: 35.5px;
+  top: 39px;
+}
+.acc-btn .plus-sign::after {
+  content: "";
+  width: 2px;
+  height: 30px;
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all ease-in-out 0.3s;
+}
+.acc-btn .plus-sign--white, .acc-btn .plus-sign--white::after {
+  background-color: #fff;
+}
+.acc-btn .plus-sign--black, .acc-btn .plus-sign--black::after {
+  background-color: #707070;
+}
+.acc-btn .plus-sign.rotate::after {
+  transform: translateX(-50%) rotate(-90deg);
+}
+.acc-btn--pink {
+  background-color: #F3BAC3;
+  color: #fff;
+}
+.acc-btn--yellow {
+  background-color: #E9EC89;
+  color: #707070;
+}
+.acc-btn--blue {
+  background-color: #00ACD5;
+  color: #fff;
+}
+.acc-btn--a {
+  background-color: #fff;
+  color: #707070;
+  font-size: 1.125rem;
+  display: none;
+  padding: 30px 5rem 35px 100px;
+  position: relative;
+}
+.acc-btn--a p {
+  line-height: 2;
+  opacity: 0;
+  transition: opacity ease-in-out 0.7s;
+}
+.acc-btn--a::before {
+  content: "A.";
+  color: #E45560;
+  opacity: 0;
+  transition: opacity ease-in-out 0.7s;
+}
+.acc-btn--a::before, .acc-btn--q::before {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 3.375rem;
+  position: absolute;
+  left: 30px;
+  top: 0;
+}
+.acc-btn .reveal-a p {
+  opacity: 1;
+  transition: opacity ease-in-out 0.7s;
+}
+.acc-btn .reveal-a::before {
+  opacity: 1;
+}
+
+.contact-oc__uketsuke {
+  color: #707070;
+  font-family: "メイリオ", "Meiryo", sans-serif;
+  font-size: 18px;
+  border-left: 1px solid #707070;
+  padding: 11px 0 11px 30px;
+}
+@media screen and (max-width: 767px) {
+  .contact-oc__uketsuke {
+    display: block;
+    padding: 0;
+    text-align: center;
+    border: none;
+  }
+}
+
+.contents-oc__contact-tel.contents-oc__contact-tel--contact-page {
+  margin-right: 30px;
+}
+
+/*# sourceMappingURL=extra.css.map */

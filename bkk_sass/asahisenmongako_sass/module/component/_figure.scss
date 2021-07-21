@@ -1,0 +1,63 @@
+/* ---------------------------------------------
+*   c-figure
+--------------------------------------------- */
+.c-figure {
+    &--graph-1 {
+        margin-top: 70px;
+        margin-left: 50px;
+        margin-bottom: 80px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            margin-top: pxtovw(70, 'pc');
+            margin-left: 0;
+            margin-bottom: pxtovw(80, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            margin-top: pxtovw(35, 'sp');
+            margin-bottom: pxtovw(40, 'sp');
+        }
+    }
+
+    &--graph-2 {
+        margin-top: 40px;
+        margin-left: 100px;
+        margin-bottom: 70px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            margin-top: pxtovw(40, 'pc');
+            margin-left: 0;
+            margin-bottom: pxtovw(70, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            margin-top: pxtovw(20, 'sp');
+            margin-bottom: pxtovw(35, 'sp');
+        }
+    }
+}
+
+.c-figure-movie {
+    width: 1000px;
+    height: 563px;
+    margin: 0 auto;
+
+    @media screen and (max-width: #{$breakpoint-pc}px) {
+        width: pxtovw(1000, 'pc');
+        height: pxtovw(563, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        width: pxtovw(351, 'sp');
+        height: pxtovw(209, 'sp');
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+
+        .ytp-button {
+            display: none !important;
+        }
+    }
+}

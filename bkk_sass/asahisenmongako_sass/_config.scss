@@ -1,0 +1,97 @@
+// ==========================================================
+// Name:
+//     _config.scss
+//
+// Description:
+//     サイト全体に共通するデザインとスタイルの設定を記述する
+//     このファイルに記述するコメントは、１行コメントの「//」を使用する
+//     「/* ~~ */」の複数行コメントは、CSSとして出力されるため使用しない
+//
+// Contents:
+//     design config
+//     media query
+// ==========================================================
+
+// ---------------------------------------------
+//   design config
+//----------------------------------------------
+
+//   design width
+//----------------------------------------------
+$design-width-pc: 1280;
+// $design-width-tb: 900;
+$design-width-sp: 375;
+
+//   contents width
+//   contents side padding を除いた部分の幅
+//----------------------------------------------
+$contents-width-pc: 1280;
+// $contents-width-tb: 880;
+$contents-width-sp: 730;
+
+//   contents side padding
+//----------------------------------------------
+$contents-side-padding-pc: 10;
+// $contents-side-padding-tb: 10;
+$contents-side-padding-sp: 10;
+
+//   min width
+//----------------------------------------------
+$minwidth-pc: $contents-width-pc;
+// $minwidth-tb: $design-width-sp + 1;
+$minwidth-sp: 320;
+
+//   breakpoints
+//----------------------------------------------
+$breakpoint-pc: 1280;
+$breakpoint-tb: 1024;
+$breakpoint-sp: 767;
+
+//   fixed header height
+//----------------------------------------------
+$fixed-header-height-pc: 0;
+$fixed-header-height-tb: 0;
+$fixed-header-height-sp: 0;
+
+//   color
+//----------------------------------------------
+$black1: #000;
+$black2: #707070;
+$black3: #302D2C;
+$gray1: #666666;//footerテキスト
+$gray2: #CCCCCC;//table border
+$gray3: #F2F2F2;//gray-border
+$gray4: #AFAFAF;
+$gray5: #E2E2E2;
+$white1: #fff;
+$theme1: #E45560;//サイトテーマカラー赤
+$theme2: #00ACD5;//サイトテーマカラー水色
+$yellow1: #E9EC89;//マーカー
+$yellow2: #FFFFEC;//背景
+$green1: #2FA22B;//c-list-label
+$pink1: #F3BAC3;//footer bg
+$orange1: #FEF0EC;//table
+$orange2: #FFDFD6;//table
+$blue1: #ECFBFF;//table
+
+
+//   line height
+//----------------------------------------------
+$line-height-pc: 1.5;
+// $line-height-tb: 1.5;
+$line-height-sp: 1.5;
+
+//   font
+//----------------------------------------------
+$root-fz-pc: 16;
+// $root-fz-tb: 32;
+$root-fz-sp: 13;
+$root-fc: $black3;
+$root-ff: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "meiryo", sans-serif;
+$ff-mplus: 'M PLUS Rounded 1c', sans-serif;
+$ff-dosis: 'Dosis', sans-serif;
+
+//   hover
+//----------------------------------------------
+$hover-opacity-ratio: 0.8;
+$hover-opacity-ms: 300;

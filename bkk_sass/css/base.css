@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/* ==========================================================
+Name:
+    base.css
+
+Description:
+    サイト全体に共通する設定を記述する
+    基本的にタグ自体にスタイルを定義する
+
+Contents:
+    base settings
+========================================================== */
+/* ==========================================================
+*
+*   base settings
+*
+========================================================== */
+/* ---------------------------------------------
+*   Universal selector
+--------------------------------------------- */
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* ---------------------------------------------
+*   html, body
+--------------------------------------------- */
+html,
+body {
+    color: #302D2C;
+    font-size: 16px;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "meiryo", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    html,
+    body {
+        overflow-x: hidden;
+        font-size: 3.46667vw;
+    }
+}
+
+body {
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        min-width: 320px;
+        line-height: 1.5;
+    }
+}
+
+/* ---------------------------------------------
+*   <a> tag
+--------------------------------------------- */
+a {
+    outline: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------
+*   <img> tag
+--------------------------------------------- */
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}

@@ -1,0 +1,49 @@
+/* ---------------------------------------------
+*   c-table-3
+--------------------------------------------- */
+.c-table-3 {
+    width: 100%;
+    margin: 0 auto;
+
+    &__row {
+        border-bottom: 1px dashed $black3;
+    }
+
+    &__ttl {
+        color: $theme1;
+        font-size: pxtorem(21, 'pc');
+        width: percentage(230/1000);
+        padding: 25px 0;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(21, 'pc');
+            padding: pxtovw(25, 'pc') 0;
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            display: block;
+            width: 100%;
+            font-size: pxtorem(14, 'sp');
+            padding: pxtovw(15, 'sp') 0 pxtovw(10, 'sp');
+        }
+    }
+
+    &__txt {
+        font-size: pxtorem(16, 'pc');
+        width: percentage(770/1000);
+        padding: 25px 0;
+        line-height: 2;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            font-size: pxtovw(16, 'pc');
+            padding: pxtovw(25, 'pc') 0;
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            display: block;
+            width: 100%;
+            font-size: pxtorem(11, 'sp');
+            padding: 0 0 pxtovw(15, 'sp');
+        }
+    }
+}

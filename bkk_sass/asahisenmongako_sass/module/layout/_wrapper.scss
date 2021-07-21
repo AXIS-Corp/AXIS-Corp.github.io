@@ -1,0 +1,60 @@
+/* ---------------------------------------------
+*   wrapper
+--------------------------------------------- */
+.wrapper {
+    $host: &;
+    margin-top: 100px;
+    overflow-x: hidden;
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        margin-top: 60px;
+    }
+
+    &:before {
+    	content: "";
+    	position: absolute;
+    	top: 50px;
+    	right: 0;
+        z-index: 1;
+        width: calc(383vw/1920 * 100);
+        height: calc(332vw/1920 * 100);
+    	background: url("../img/common/img_deco-pink.png") 0 0 no-repeat;
+    	background-size: 100% auto;
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(100, 'sp');
+            height: pxtovw(103, 'sp');
+            top: 50px;
+            right: 0;
+        }
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 330px;
+        left: calc(-514vw/1920 * 100);
+        z-index: -1;
+        width: calc(684vw/1920 * 100);
+        height: calc(856vw/1920 * 100);
+        background: url("../img/common/img_deco-pink_02.png") 0 0 no-repeat;
+        background-size: 100% auto;
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(547, 'sp');
+            height: pxtovw(784, 'sp');
+            top: pxtovw(1040, 'sp');
+            left: pxtovw(-312, 'sp');
+        }
+    }
+
+    @at-root .home & {
+        &:after {
+            top: calc(2000vw/1920 * 100);
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                top: pxtovw(1110, 'sp');
+            }
+        }
+    }
+}

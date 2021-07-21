@@ -1,0 +1,457 @@
+/* ---------------------------------------------
+*   c-btn
+--------------------------------------------- */
+.c-btn {
+	display: flex;
+    align-items: center;
+	border-radius: 100px;
+	color: $white1;
+	background-color: $theme2;
+    background-image: url("../img/common/icon_btn-arrow.svg");
+    background-size: 41px 10px;
+    background-position: right 30px center;
+    background-repeat: no-repeat;
+	font-size: pxtorem(20, 'pc');
+	font-weight: bold;
+	width: 369px;
+	height: 55px;
+    padding-left: 45px;
+    transition: color 0.3s;
+    transition: background-color 0.3s;
+
+    @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+        &:hover {
+            background-color: $yellow1;
+            color: $black3;
+            background-image: url("../img/common/icon_btn-arrow_2.svg");
+        }
+    }
+
+    @media screen and (max-width: #{$breakpoint-pc}px) {
+        font-size: pxtovw(20, 'pc');
+        background-size: pxtovw(41, 'pc') pxtovw(10, 'pc');
+        background-position: right pxtovw(30, 'pc') center;
+        width: pxtovw(369, 'pc');
+        height: pxtovw(55, 'pc');
+        padding-left: pxtovw(45, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        font-size: pxtorem(13, 'sp');
+        width: pxtovw(269, 'sp');
+        height: pxtovw(40, 'sp');
+        background-size: pxtovw(28, 'sp') pxtovw(6, 'sp');
+        background-position: right pxtovw(22, 'sp') center;
+        padding-left: pxtovw(30, 'sp');
+        margin: 0 auto;
+    }
+
+    &--l {
+    	width: 405px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(405, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(268, 'sp');
+        }
+    }
+
+    &--ll {
+        width: 430px;
+        height: 75px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(430, 'pc');
+            height: pxtovw(75, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(268, 'sp');
+            height: pxtovw(40, 'sp');
+        }
+    }
+
+    &--s {
+    	width: 340px;
+        margin: 0 auto;
+        padding-left: 65px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(340, 'pc');
+            padding-left: pxtovw(65, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(268, 'sp');
+            padding-left: pxtovw(75, 'sp');
+        }
+    }
+
+    &--none {
+    	width: 290px;
+        background-image: none;
+        font-size: pxtorem(16, 'pc');
+        justify-content: center;
+        padding-left: 0;
+        font-weight: normal;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(270, 'pc');
+            font-size: pxtovw(16, 'pc');
+        }
+
+        @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+            &:hover {
+                background-image: none;
+            }
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(170, 'sp');
+            font-size: pxtorem(10, 'sp');
+            text-align: center;
+        }
+    }
+
+    &--contact {
+    	font-size: pxtorem(15, 'pc');
+		width: 260px;
+		font-weight: normal;
+        background-image: url("../img/common/icon_mail.svg");
+        background-repeat: no-repeat;
+        background-size: 23px 18px;
+        background-position: 25px center;
+        padding-left: 15px;
+        justify-content: center;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) and (min-width: #{$breakpoint-tb + 1}px) {
+            font-size: pxtovw(15, 'pc');
+            width: pxtovw(260, 'pc');
+            background-size: pxtovw(23, 'pc') pxtovw(18, 'pc');
+            background-position: pxtovw(25, 'pc') center;
+            padding-left: pxtovw(15, 'pc');
+        }
+
+        @media screen and (min-width: #{$breakpoint-tb + 1}px) {
+            &:hover {
+                background-image: url("../img/common/icon_mail_2.svg");
+            }
+        }
+
+        @media screen and (max-width: #{$breakpoint-tb}px) and (min-width: #{$breakpoint-sp + 1}px) {
+            &:hover {
+                background-color: $theme2;
+                color: $white1;
+                background-image: url("../img/common/icon_mail.svg");
+            }
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(174, 'sp');
+            height: pxtovw(42, 'sp');
+            font-size: pxtorem(12, 'sp');
+            padding-left: 0;
+            background-image: none;
+            margin: 0;
+            font-weight: bold;
+        }
+    }
+
+    &--send {
+        width: 260px;
+        font-size: pxtorem(20, 'pc');
+        font-weight: bold;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(260, 'pc');
+            font-size: pxtovw(20, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(268, 'sp');
+            font-size: pxtovw(13, 'sp');
+        }
+    }
+
+    &--map {
+    	width: 260px;
+        padding-right: 20px;
+    	font-size: pxtorem(20, 'pc');
+        background-image: url("../img/common/icon_open.svg");
+        background-size: 18px 20px;
+        background-position: right 25px center;
+
+        @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+            &:hover {
+                background-image: url("../img/common/icon_open_2.svg");
+            }
+        }
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(260, 'pc');
+            padding-right: pxtovw(20, 'pc');
+            font-size: pxtovw(20, 'pc');
+            background-size: pxtovw(18, 'pc') pxtovw(20, 'pc');
+            background-position: right pxtovw(25, 'pc') center;
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(268, 'sp');
+            background-size: pxtovw(18, 'sp') pxtovw(20, 'sp');
+            font-size: pxtorem(13, 'sp');
+            background-position: right pxtovw(55, 'sp') center;
+            padding: 0;
+            justify-content: center;
+        }
+    }
+
+    &--pink {
+    	width: 260px;
+    	font-size: pxtorem(20, 'pc');
+    	background-color: rgba($theme1,0.7);
+        background-image: none;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(260, 'pc');
+            font-size: pxtovw(20, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(268, 'sp');
+            font-size: pxtorem(13, 'sp');
+            padding-left: 0;
+            justify-content: center;
+        }
+
+        &:hover {
+            background-image: none;
+        }
+    }
+
+    &--center {
+        margin: 0 auto;
+        padding-left: 80px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            padding-left: pxtovw(80, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            padding-left: pxtovw(80, 'sp');
+        }
+    }
+
+    &--pdl {
+        padding-left: 40px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            padding-left: pxtovw(40, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            padding-left: pxtovw(40, 'sp');
+        }
+
+        @at-root .windows & {
+            padding-left: 25px;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                padding-left: pxtovw(25, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                padding-left: pxtovw(25, 'sp');
+            }
+        }
+    }
+
+    &--txt-center {
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            justify-content: center;
+            padding-left: 0;
+            padding-right: pxtovw(10, 'sp');
+        }
+    }
+
+    &--back {
+        width: 360px;
+        background-image: url("../img/common/icon_btn-arrow-back.svg");
+        background-size: 38px 7px;
+        background-position: left 50px center;
+        padding: 0;
+        margin: 80px auto 0;
+        justify-content: center;
+
+        @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+            &:hover {
+                background-image: url("../img/common/icon_btn-arrow-back_2.svg");
+            }
+        }
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            width: pxtovw(360, 'pc');
+            background-size: pxtovw(38, 'pc') pxtovw(7, 'pc');
+            background-position: left pxtovw(50, 'pc') center;
+            margin-top: pxtovw(80, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            width: pxtovw(268, 'sp');
+            background-size: pxtovw(38 * 0.6, 'sp') pxtovw(7 * 0.6, 'sp');
+            background-position: left pxtovw(20, 'sp') center;
+            margin-top: pxtovw(80, 'sp');
+        }
+    }
+
+    &--oc {
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            background-color: $theme1;
+            width: pxtovw(174, 'sp');
+            height: pxtovw(42, 'sp');
+            font-family: $ff-dosis;
+            background-image: url("../img/common/sp/icon_oc.svg");
+            background-size: pxtovw(19, 'sp') pxtovw(16, 'sp');
+            background-position: left pxtovw(20, 'sp') center;
+            padding-left: pxtovw(55, 'sp');
+            letter-spacing: 0.1em;
+            margin-left: 0;
+            margin-right: pxtovw(8, 'sp');
+        }
+    }
+
+    &--hover {
+        @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+            &:hover {
+                color: $theme2;
+                background-color: $white1;
+                transition: color 0.3s;
+                transition: background-color 0.3s;
+                background-image: url("../img/common/icon_btn-arrow_3.svg");
+            }
+        }
+    }
+}
+
+/*  c-btn-wrap
+--------------------------------------------- */
+.c-btn-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+    margin-top: 100px;
+
+    @media screen and (max-width: #{$breakpoint-pc}px) {
+        margin-top: pxtovw(100, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        margin-top: pxtovw(50, 'sp');
+        justify-content: space-between;
+    }
+
+   .c-btn {
+        margin-bottom: 40px;
+        margin-right: 10px;
+
+        @media screen and (max-width: #{$breakpoint-pc}px) {
+            margin-bottom: pxtovw(40, 'pc');
+            margin-right: pxtovw(10, 'pc');
+        }
+
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            margin: 0;
+            margin-bottom: pxtovw(10, 'sp');
+        }
+
+        &--right {
+            margin-right: 0;
+        }
+    }
+
+    &--center {
+        @media screen and (max-width: #{$breakpoint-sp}px) {
+            justify-content: center;
+        }
+
+        .c-btn {
+            margin-right: 45px;
+
+            @media screen and (max-width: #{$breakpoint-pc}px) {
+                margin-right: pxtovw(45, 'pc');
+            }
+
+            @media screen and (max-width: #{$breakpoint-sp}px) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+/*  btn-circle
+--------------------------------------------- */
+.btn-circle {
+    position: absolute;
+    left: calc(20vw/1920 * 100);
+    bottom: calc(20vw/1920 * 100);
+    display: block;
+    z-index: 10;
+    width: calc(249vw/1920 * 100);
+
+    @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+        @include hover-opacity();
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        width: pxtovw(130, 'sp');
+        height: pxtovw(130, 'sp');
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: pxtovw(-30, 'sp');
+    }
+}
+
+
+/*  btn-line
+--------------------------------------------- */
+.btn-line {
+    display: block;
+    position: fixed;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 31px;
+
+    @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+        @include hover-opacity();
+    }
+
+    @media screen and (max-width: #{$breakpoint-pc}px) {
+        right: pxtovw(25, 'pc');
+        width: pxtovw(31, 'pc');
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        display: none;
+    }
+}
+
+/*  fix-btn
+--------------------------------------------- */
+.fix-btn {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: $white1;
+    display: flex;
+    justify-content: center;
+    padding: pxtovw(10, 'sp') 0;
+
+    @media screen and (min-width: #{$breakpoint-sp + 1}px) {
+        display: none;
+    }
+}
