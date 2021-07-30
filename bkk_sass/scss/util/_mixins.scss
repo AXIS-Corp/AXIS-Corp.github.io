@@ -1,0 +1,37 @@
+//メディアクエリ
+@mixin large-screen {
+    @media (min-width: 1500px) {
+        @content;
+    }
+}
+@mixin pc {
+    @media (min-width: 1225px) {
+        @content;
+    }
+}
+@mixin large-tab {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin tab {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+@mixin large-sp {
+    @media (max-width: 768px) {
+      @content;
+    }
+}
+@mixin sp {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+
+@mixin dropShadow($color) {
+    -webkit-box-shadow: -1px 2px 19px -1px $color; 
+    box-shadow: -1px 2px 19px -1px $color;
+}

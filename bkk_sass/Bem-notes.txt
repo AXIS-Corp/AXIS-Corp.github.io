@@ -1,0 +1,17 @@
+Bem Notes:
+
+1. Decide where new components begin and old ones end
+2. Don't over-modulize, use modifiers when you can before creating an altogether new component
+3. Namespace generic components that can be reused
+4. Separate state hooks (javascript states) from the component name
+5. Lean towards more classes than fewer classes
+
+
+
+<!-- Namespace prefixes -->
+
+c- : コンポネント
+l- : レイアウト
+h- : ヘルパー（ユティリティクラス）
+is-/has- : ステート、一時的な状況
+js- : JavaScriptによる動き。CSSは関連されていない

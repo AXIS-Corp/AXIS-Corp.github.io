@@ -1,0 +1,38 @@
+// colors
+$black: #3e3e3e;
+$pink-liter: #fff7f9;
+$pink-lite: #ffc4d5;
+$pink-med: #ff7b9f;
+$pink-med-dark: #FF648E;
+$pink-dark: #d85482;
+$blue-lite: #EFFDFC;
+$blue-med: #29b4ca;
+$blue-med-dark: #1FA1B5;
+$blue-dark: #0d98ad;
+$yellow-lite: #fffad1;
+$yellow-med: #fff395;
+$yellow-dark: #ffea40;
+$red: #ff0000;
+
+$blue-tab: #4dcde2;
+$pink-tab: #F8A7BF;
+
+
+$pinkDrop: rgb(199 20 69 / 16%);
+
+// atomic colors （spanですぐ使用できるよう）
+.txt-black { color: $black; }
+.txt-white { color: #fff; }
+.txt-pink-lite { color: $pink-lite; }
+.txt-pink-med { color: $pink-med; }
+.txt-pink-dark { color: $pink-dark; }
+.txt-blue-med { color: $blue-med; }
+.txt-blue-dark { color: $blue-dark; }
+.txt-yellow-lite { color: $yellow-lite; }
+.txt-yellow-med { color: $yellow-med; }
+.txt-yellow-dark { color: $yellow-dark; }
+.txt-red { color: $red; }
+
+$root-ff: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "meiryo", sans-serif;
+$ff-mplus: 'M PLUS Rounded 1c', sans-serif;
+$ff-dosis: 'Dosis', sans-serif;

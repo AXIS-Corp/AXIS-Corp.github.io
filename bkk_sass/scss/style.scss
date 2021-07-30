@@ -1,0 +1,159 @@
+@use 'sass:math';
+@use 'util/variables' as *;
+@use 'base/typography' as *;
+@use 'util/functions' as *;
+@use 'util/mixins' as *;
+@use 'base/normalize' as *;
+@use 'dawn';
+
+
+// .division-example {
+//     padding-left: math.div(20rem, 4);
+// }
+
+// .division-example {
+//     padding-left: math.div(20, 4) * 1px;
+// }
+
+// ① parent selector vs nesting and namespacing
+.grid-example {
+    .grid-example__ttl {
+        text-align: center;
+        font-size: rem(24);
+        // @include dawn.ff-noto(bold);
+    }
+    &__ttl {
+        text-align: center;
+        font-size: rem(24);
+        // @include dawn.ff-noto();
+    }
+}
+
+// ② grid and extend
+
+.grid {
+    margin: 5rem auto;
+    width: min(90%, 75rem);
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1em;
+}
+.grid-box {
+    border: 1px solid $black;
+    padding: min(10px, 1vw);
+}
+
+.btn-grid {
+    display: grid;
+    grid-auto-flow: column;
+    width: min(90%, 75rem);
+    margin: 5rem auto;
+}
+
+.btn {
+    width: 175px;
+    height: 55px;
+    line-height: 55px;
+    background-color: $red;
+    color: #fff;
+    &--black {
+        @extend .btn;
+        border-width: 3px;
+        background-color: $black;
+    }
+}
+
+.btn-version-two {
+    width: 175px;
+    height: 55px;
+    line-height: 55px;
+    background-color: $red;
+    color: #fff;
+    &--black {
+        border-width: 3px;
+        background-color: $black;
+    }
+}
+
+
+// ③ placeholders
+
+%shadowed-single {
+    @include dropShadow($pinkDrop);
+    border: 2px solid $yellow-dark;
+    cursor: pointer;
+}
+
+.flex-example {
+    @include dawn.flex(end);
+    margin: 5rem auto;
+    width: max(1090px, 90%);
+    &__single {
+        flex: 0 1 30%;
+        padding: min(15px, 5vw);
+        &--special {
+            @extend %shadowed-single;
+        }
+        &--even-more-special {
+            @extend %shadowed-single;
+            font-weight: bold;
+            color: $blue-dark;
+        }
+        &--super-special {
+            @extend %shadowed-single;
+            font-weight: bold;
+            color: $blue-dark;
+        }
+    }
+}
+
+%ph{
+    margin-top: 10px;
+    h1 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    p {
+        color: #000;
+        font-size: 13px;
+        span {
+            color: #666;
+        }
+    }
+}
+.section1 {
+    @extend %ph;
+}
+
+.error {
+    border: 1px #f00;
+    background-color: #fdd;
+  
+    &--serious {
+      @extend .error;
+      border-width: 3px;
+    }
+  }
+
+
+
+// ④ second grid bem example
+
+.grid-two-title {
+    text-align: center;
+}
+
+.l-grid {
+    display: grid;
+    grid-template-columns: 330px 280px 300px 200px;
+    grid-template-rows: 370px 200px 180px;
+    margin: 0 auto;
+    column-gap: 10px;
+    row-gap: 15px;
+    list-style-type: none;
+    width: max(1300px, 70%);
+    &__item {
+        border: 2px solid black;
+    }
+}
+

@@ -1,0 +1,83 @@
+// z-index cleanup
+
+// Before (manual declarations)
+.modal { z-index: 9999; } 
+.site-nav { z-index: 210; } 
+.site-header { z-index: 200; } 
+.site-content { z-index: 100; } 
+.site-footer { z-index: 50; }
+ 
+ 
+// After (using functions and lists)
+ 
+// Function
+@function z($name, $z-indexes-list: $z-indexes) {
+ @if index($z-indexes-list, $name) {
+ @return (length($z-indexes-list) - index($z-indexes-list, $name)) + 1;
+ } @else {
+ @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes-list}';
+ 
+ @return null;
+ }
+}
+ 
+// List
+$z-indexes: (
+ 'modal',
+ 'site-nav',
+ 'site-header',
+ 'site-content',
+ 'site-footer'
+);
+ 
+// Example
+.modal { z-index: z(modal); }
+.site-nav { z-index: z(site-nav); }
+.site-header { z-index: z(site-header); }
+.site-content { z-index: z(site-content); }
+.site-footer { z-index: z(site-footer ); }
+ 
+// Output
+.modal { z-index: 5; }
+.site-nav { z-index: 4; }
+.site-header { z-index: 3; }
+.site-content { z-index: 2; }
+.site-footer { z-index: 1; }
+
+
+// Photoshop Letter Spacing
+@function ls-basic($value) {
+    @return $value / 1000 * 1em;
+}
+
+// Example
+.button {
+    letter-spacing: ls-basic(-5);
+}
+
+// Output
+.button {
+    letter-spacing: -0.005em;
+}
+
+
+
+// ===== Mixins =====
+// ----- And prefixes for all ! -----
+@mixin transform( $value ){
+    @each $prefix in -webkit-, -ms-, '' {
+      #{$prefix}transform: $value;
+    }
+}
+
+// Map example
+
+$icons: ("eye": "\f112", "start": "\f12e", "stop": "\f12f");
+
+@each $name, $glyph in $icons {
+  .icon-#{$name}:before {
+    display: inline-block;
+    font-family: "Icon Font";
+    content: $glyph;
+  }
+}

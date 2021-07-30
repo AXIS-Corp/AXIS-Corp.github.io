@@ -1,9 +1,0 @@
-/// vertical align fix IE
-/// IEで文字が上寄りになる現象を修正
-/// @include valign-fix-ie;
-@mixin valign-fix-ie() {
-    @at-root .ie & {
-        position: relative;
-        top: .2em;
-    }
-}
