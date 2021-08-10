@@ -19,6 +19,12 @@
     "sidebar . main main"
     "footer footer footer footer";
 }
+.grid-parent--names {
+    grid-template:
+        [row1-start] "header header header" 100px [row1-end]
+        [row2-start] "footer footer footer" 80px [row2-end]
+        / auto 85px auto;
+}
 .rows-columns {
     row-gap: 40px;
     column-gap: 20px;
@@ -27,6 +33,20 @@
 
 
 .grid-parent--grid-auto {
-    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
     /* grid-auto-rows: 1fr; */
+}
+
+.grid-parent--grid-span {
+    grid-template-columns: 200px 250px;
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 20px;
+}
+.grid-parent--grid-span .grid-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.grid-parent--grid-span .grid-2 {
+    grid-row-start: 2;
+    grid-row-end: 3;
 }

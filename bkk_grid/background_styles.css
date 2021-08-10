@@ -5,7 +5,7 @@ main {
 }
 .grid-parent {
     display: grid;
-    height: 400px;
+    min-height: 400px;
     margin-bottom: 400px;
 }
 .grid {
@@ -13,7 +13,11 @@ main {
     color: rgb(49, 49, 49);
     border: 1px solid black;
     font-size: 24px;
+    font-weight: 800;
     text-align: center;
+}
+.grid p {
+    font-weight: 400;
 }
 .grid:nth-child(2n) {
     background-color: hsl(192, 80%, 45%);
