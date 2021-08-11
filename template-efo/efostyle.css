@@ -1,0 +1,242 @@
+/* 基本設定 */
+
+/* 親要素に追加するクラス：説明 
+1. リセット・ディフォルト機能
+2. .efo-two-col : 項目を
+
+*/
+
+
+
+/* --------------------------------------------------- */
+/* デフォルト設定 */
+/* ボーダー・幅・外枠のマージンとパディング・タイトル */
+form.inner-efo-default-theme fieldset {
+    border: none;
+    border-radius: 0;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+    width: 93vw;
+}
+/* タイトル */
+form.inner-efo-default-theme legend {
+    display: none;
+}
+/* 必須アイコン */
+/* 必須アイコンの設定はタイトルに依存するので、デフォルト価値編集せず */
+form.inner-efo-default-theme .required-icon {
+    color: #fff;
+    background-color: #C44303;
+    padding: 1px 6px;
+    margin: 0 0 0 18px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    vertical-align: text-bottom;
+    position: relative;
+    bottom: 3px;
+}
+
+/* テキスト入力（複数行）リサイズオッフ */
+form.inner-efo-default-theme .bl-item textarea {
+    resize: none;
+}
+
+/* ラベルオプション */
+/* 必須アイコンを位置させるためにpositionをrelativeにする */
+/* p.font-size-m　と label.font-size-mが存在する */
+
+form.inner-efo-default-theme .ttl-item label.font-size-m.mb6,
+form.inner-efo-default-theme .ttl-item p.font-size-m.mb6 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    position: relative;
+}
+
+/* 項目ごとのオプション */
+/* margin: 0 でリセット */
+form.inner-efo-default-theme .field {
+    margin: 0 0 35px;
+    position: relative;
+}
+
+/* 入力 */
+/* 全体的な設定 */
+form.inner-efo-default-theme .field .bl-item input:not(.efo-col-5),
+form.inner-efo-default-theme .field .bl-item textarea {
+    background: #fff;
+    border: 1px solid #d3d3d9;
+    width: 100%;
+    font-size: .975rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0 1em;
+}
+form.inner-efo-default-theme .field .bl-item input:not(.efo-col-5),
+form.inner-efo-default-theme .field .bl-item input[type="text"],
+form.inner-efo-default-theme .field .bl-item > .select select {
+    height: 2.6rem;
+}
+form.inner-efo-default-theme .field .bl-item textarea {
+    padding: 1em;
+}
+form.inner-efo-default-theme .field .bl-item input:not(.input-s-width):not(.efo-datepicker) {
+    padding: 0 1em;
+}
+
+/* 入力　マウスオバー・フォーカス */
+form.inner-efo-default-theme input:hover, 
+form.inner-efo-default-theme textarea:hover,
+form.inner-efo-default-theme input:not(:disabled):hover, 
+form.inner-efo-default-theme textarea:not(:disabled):hover {
+    color: inherit;
+    background: #fafafa;
+    border-color: #bebec3;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+form.inner-efo-default-theme input:focus, 
+form.inner-efo-default-theme textarea:focus,
+form.inner-efo-default-theme input:not(:disabled):focus, 
+form.inner-efo-default-theme textarea:not(:disabled):focus {
+    color: inherit;
+    background: #fafafa;
+    border-color: #165E83;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+
+
+/* テキスト表示 */
+/* form.inner-efo-default-theme .field .bl-item textarea[readonly="readonly"]{} */
+
+/* チェックボックス */
+/* inline-block */
+form.inner-efo-default-theme label.control.checkbox {
+    display: inline-flex;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+form.inner-efo-default-theme label.control.checkbox:nth-child(n + 2) {
+    margin: 0 0 0 20px;
+}
+form.inner-efo-default-theme label.control.checkbox .control-label {
+    margin: 0 0 0 5px;
+}
+form.inner-efo-default-theme .control.checkbox .control-indicator {
+    border-radius: 2px;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+}
+/* チェックボックスの背景色に!importantを付ける必要ある */
+form.inner-efo-default-theme .control.checkbox input[type=checkbox]:checked ~ .control-indicator {
+    background-color: red!important;
+    border-color: black!important;
+    /* チェックボックスのサイズは background-size で変更出来る */
+    /* background-size: 90%; */
+}
+
+/* セレクトボックス */
+form.inner-efo-default-theme .field .bl-item > .select select {
+    background: #fff;
+    border: 1px solid #d3d3d9;
+    font-size: .975rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0 1em;
+}
+
+/* ラジオボタン */
+/* これは〇の形にするコード。色だけにしたい場合content: none; にする */
+form.inner-efo-default-theme label.control.radio {
+    display: inline-flex;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+form.inner-efo-default-theme label.control.radio:nth-child(n + 2) {
+    margin: 0 0 0 20px;
+}
+form.inner-efo-default-theme label.control.radio .control-label {
+    margin: 0 0 0 5px;
+}
+
+form.inner-efo-default-theme .control.radio input[type=radio]:checked ~ .control-indicator:before {
+    /* content: none; */
+    width: .5em;
+    height: .5em;
+    background: #fff;
+    border-radius: 1.5rem;
+}
+form.inner-efo-default-theme .control.info input:checked ~ .control-indicator {
+    background-color: red !important;
+    border-color: red !important;
+}
+
+/* 生年月日・月時ピッカー ・住所*/
+/* efo-col-5 は郵便番号と都道府県の独特のクラス */
+/* .flatpickr-input は日付の独特のクラス */
+form.inner-efo-default-theme .flatpickr-input, 
+form.inner-efo-default-theme .efo-col-5 {
+    min-width: 120px;
+    max-width: 140px;
+    width: 20%;
+}
+form.inner-efo-default-theme .input-s-width {
+    max-width: none;
+    padding: 0 3px;
+}
+form.inner-efo-default-theme .after-text {
+    display: block;
+    margin-right: 15px;
+    padding: 6px;
+}
+
+/* ボタン */
+form.inner-efo-default-theme .button-primary.btn-confirm,
+form.inner-efo-default-theme .button-primary.btn-submit {
+    color: #165E83;
+    background: transparent;
+    border-color: #165E83;
+}
+form.inner-efo-default-theme .button-primary.btn-confirm:not(:disabled):focus, 
+form.inner-efo-default-theme .button-primary.btn-confirm:not(:disabled):hover,
+form.inner-efo-default-theme .button-primary.btn-submit:not(:disabled):focus, 
+form.inner-efo-default-theme .button-primary.btn-submit:not(:disabled):hover {
+    color: #fff;
+    background: #165E83;
+    border-color: #165E83;
+}
+form.inner-efo-default-theme .button-primary.btn-cancel {
+    color: rgb(255, 255, 255);
+    background-color: rgb(107, 107, 107);
+    border-color: rgb(107, 107, 107);
+}
+form.inner-efo-default-theme .button-primary.btn-cancel:not(:disabled):focus, 
+form.inner-efo-default-theme .button-primary.btn-cancel:not(:disabled):hover {
+    color: rgb(107, 107, 107);
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(107, 107, 107);
+}
+
+
+
+/* 2コラムレイアウト .efo-two-col */
+
+/* .efo-two-col form.inner-efo-default-theme .field {
+    display: flex;
+}
+.efo-two-col form.inner-efo-default-theme .field .bl-item .before-text ~ input {
+    background-color: pink;
+}
+.efo-two-col form.inner-efo-default-theme .field .ttl-item {
+    flex: 0 1 40%;
+}
+.efo-two-col form.inner-efo-default-theme .field .bl-item {
+    flex: 1 0 60%;
+} */
