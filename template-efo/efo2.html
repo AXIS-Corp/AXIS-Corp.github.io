@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="efostyle.css">
     <link rel="stylesheet" href="background_styles.css">
-    <script src="efo.js"></script>
     <title>EFOテンプレート</title>
 </head>
 <body>
@@ -27,18 +26,15 @@
         // クリアーボタン
         const txtInputs = document.querySelectorAll('input, textarea, select');
         const clearBtn = document.querySelector('.clear-btn');
-        const btnArea = document.querySelector('form fieldset > div:last-child');
-        const cancelBtn = document.querySelector('.btn-cancel');
-        btnArea.append(clearBtn);
+        document.querySelector('form fieldset > div:last-child').append(clearBtn);
         clearBtn.addEventListener("click", () => {
             txtInputs.forEach(singleInput => {
                 singleInput.value = "";
                 singleInput.checked = false;
-                if (singleInput.value != ""){console.log(singleInput.value);}
             });
         });
         document.addEventListener("click", () => {
-            if (cancelBtn.style.display != "" && cancelBtn.style.display != "none") {
+            if (document.querySelector('.btn-cancel').style.display != "" && document.querySelector('.btn-cancel').style.display != "none") {
                 clearBtn.style.display = "none";
             } else {
                 clearBtn.style.display = "block";
