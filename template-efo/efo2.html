@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="efostyle.css">
+    <link rel="stylesheet" href="background_styles.css">
+    <script src="efo.js"></script>
+    <title>EFOテンプレート</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>EFOテンプレート2<span>JavaScriptでクリアーボタン</span></h1>
+        </header>
+        <section id="form-one">
+            <form class="inner-efo-default-theme js-efo-elements efo-two-col" id="form-inner-merbenqalp">
+                <script id="form-merbenqalp" src="https://active-efo.net/form/js/merbenqalp.js" ></script>
+            </form>
+            <button class="clear-btn">クリアー</button>
+        </section>
+    </main>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // クリアーボタン
+        const txtInputs = document.querySelectorAll('input, textarea, select');
+        const clearBtn = document.querySelector('.clear-btn');
+        const btnArea = document.querySelector('form fieldset > div:last-child');
+        const cancelBtn = document.querySelector('.btn-cancel');
+        btnArea.append(clearBtn);
+        clearBtn.addEventListener("click", () => {
+            txtInputs.forEach(singleInput => {
+                singleInput.value = "";
+                singleInput.checked = false;
+                if (singleInput.value != ""){console.log(singleInput.value);}
+            });
+        });
+        document.addEventListener("click", () => {
+            if (cancelBtn.style.display != "" && cancelBtn.style.display != "none") {
+                clearBtn.style.display = "none";
+            } else {
+                clearBtn.style.display = "block";
+            }
+        });
+    });
+</script>
+</html>
