@@ -1,23 +1,46 @@
 .grid-parent--threebythree {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.grid-parent--repeat {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
 
-.header {
-    grid-area: header;
+.grid-parent--minmax {
+    grid-template-columns: minmax(100px, 1fr) 1fr 1fr;
+    grid-template-rows: minmax(200px, 2fr) 1fr 1fr;
 }
-.sidebar {
-    grid-area: sidebar;
-}
-.footer {
-    grid-area: footer;
-}
+
+.grid-parent--alternate {
+    grid-template-columns: 1fr 1fr
+    minmax(10px, 1fr) 3fr
+    repeat(5, 1fr)
+    50px auto 100px 1fr ;
+    grid-template-rows: min-content 1fr min-content
+    100px 1fr max-content ;
+
+   
+  }
 .grid-parent--template-areas {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
     "header header header header" 
     "sidebar . main main"
     "footer footer footer footer";
+}
+.header {
+    grid-area: header;
+}
+.sidebar {
+    grid-area: sidebar;
+}
+.main {
+    grid-area: main;
+}
+.footer {
+    grid-area: footer;
 }
 .grid-parent--names {
     grid-template:
@@ -50,3 +73,4 @@
     grid-row-start: 2;
     grid-row-end: 3;
 }
+
