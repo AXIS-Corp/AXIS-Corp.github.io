@@ -1,0 +1,120 @@
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  RewriteRule ^strength/?$ /feature/ [L,R=301]
+  RewriteRule ^casestudy?/?(.*)/?$ /cases/ [L,R=301]
+  # RewriteRule ^seminarinfo/seminar(\d+)?/?$ /seminar/ [L,R=301]
+  RewriteRule ^seminarinfo/?$ /seminar/ [L,R=301]
+  RewriteRule ^service/line-agent/?$ /service/ [L,R=301]
+  RewriteRule ^service/sns-ad-agent/?$ /service/sns-ad/ [L,R=301]
+  RewriteRule ^company-profile/?$ /company/ [L,R=301]
+  RewriteRule ^analysisp/?$ /service/ [L,R=301]
+  RewriteRule ^(blog|recruit)/listing/?$ /service/listing-ad/ [L,R=301]
+  RewriteRule ^production/?$ /service/homepage/ [L,R=301]
+  RewriteRule ^consulting/?$ /service/consulting/ [L,R=301]
+  RewriteRule ^(lp)?/?listing/?$ /service/listing-ad/ [L,R=301]
+  # RewriteRule ^library/company/?$ /document/ [L,R=301]
+  RewriteRule ^check/?$ /contact/ [L,R=301]
+  RewriteRule ^(recruit)/(iv.*)/?$ /recruit/interview/ [L,R=301]
+  RewriteRule ^(recruit)/(entrylist.*)/?$ /recruit/jobs/ [L,R=301]
+  RewriteRule ^(recruit)/(message-top)/?$ /recruit/ceo/ [L,R=301]
+  RewriteRule ^(recruit)/(message-axis)/?$ /recruit/ [L,R=301]
+  # RewriteRule ^library/195sns/?$ https://info.axis-corp.com/sns-ad/ [L,R=301]
+  RewriteRule ^library/(195.*)/?$ https://info.axis-corp.com/$1/ [L,R=301]
+  # RewriteRule ^library/?$ /wp/ [L,R=301]
+  RewriteRule ^lp/analytics-pdf2/?$ https://info.axis-corp.com/ga-basic-doc/ [L,R=301]
+  RewriteRule ^lp/listing-ad-basic/?$ https://info.axis-corp.com/195listing/ [L,R=301]
+  # RewriteRule ^(ppc|sns|marketing|analysis|seo|homepage|activity|ceo|other)/?$ /blog/category/$1 [L,R=301]
+  RewriteRule ^(.*)/(.*)(.html)/?$ /blog/$1/$2$3 [L,R=301]
+  RewriteRule ^(activity/online-sodan/?|activity/remotework/?|marketing/zoom/?|ppc/web-atracting/?)$ /blog/$1 [L,R=301]
+
+  RewriteRule ^library(/company)?/?$ /blog/ [L,R=302]
+  RewriteRule ^(category)/(ppc|sns|marketing|analysis|seo|homepage|activity|ceo|other|lpo|recruit)/?$ /blog/$2 [L,R=302]
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# “ea-php73” パッケージを既定の “PHP” プログラミング言語として設定します。
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php73 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+
+#SITEGUARD_PLUGIN_SETTINGS_START
+#==== SITEGUARD_RENAME_LOGIN_SETTINGS_START
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /
+    RewriteRule ^wp-signup\.php 404-siteguard [L]
+    RewriteRule ^wp-activate\.php 404-siteguard [L]
+    RewriteRule ^login_c4b6fv7w(.*)$ wp-login.php$1 [L]
+</IfModule>
+#==== SITEGUARD_RENAME_LOGIN_SETTINGS_END
+#==== SITEGUARD_ADMIN_FILTER_SETTINGS_START
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /
+    RewriteRule ^404-siteguard - [L]
+    RewriteRule ^wp-admin/css - [L]
+    RewriteRule ^wp-admin/images - [L]
+    RewriteRule ^wp-admin/admin-ajax\.php - [L]
+    RewriteRule ^wp-admin/load-styles\.php - [L]
+    RewriteRule ^wp-admin/site-health\.php - [L]
+    RewriteCond %{REMOTE_ADDR} !^223\.134\.14\.59$
+    RewriteCond %{REMOTE_ADDR} !^153\.127\.142\.241$
+    RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
+    RewriteCond %{REMOTE_ADDR} !^::1$
+    RewriteRule ^wp-admin 404-siteguard [L]
+</IfModule>
+#==== SITEGUARD_ADMIN_FILTER_SETTINGS_END
+#==== SITEGUARD_DISABLE_XMLRPC_SETTINGS_START
+<Files xmlrpc.php>
+    <IfModule authz_core_module>
+        Require all denied
+    </IfModule>
+    <IfModule !authz_core_module>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</Files>
+#==== SITEGUARD_DISABLE_XMLRPC_SETTINGS_END
+#SITEGUARD_PLUGIN_SETTINGS_END
+
+# BEGIN WordPress
+# "BEGIN WordPress" から "END WordPress" までのディレクティブ (行) は
+# 動的に生成され、WordPress フィルターによってのみ修正が可能です。
+# これらのマーカー間にあるディレクティブへのいかなる変更も上書きされてしまいます。
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Check if browser supports WebP images
+  RewriteCond %{HTTP_ACCEPT} image/webp
+
+  # Check if WebP replacement image exists
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+
+  # Serve WebP image instead
+  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header append Vary Accept env=REDIRECT_accept
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
