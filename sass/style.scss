@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@use "sass:math";
+
+// フォントに関係
+
+
+// 簡単にREMを計算
+@function rem($pixels) {
+    @return math.div($pixels, 16) * 1rem;
+}
+
+
+// レスポンシブフォントの考え
+
+// 1.メディアクエリー等で関数を使って定義
+
+@mixin respFont($pcFont, $tabFont: $spFont, $spFont, $superSmall: $spFont) {
+    font-size: rem($pcFont);
+    @media screen and (max-width: $tab-bp) {
+        font-size: rem($tabFont);
+    }
+    @media screen and (max-width: $sp-bp) {
+        font-size: rem($spFont);
+    }
+    @media screen and (max-width: 450px) {
+        font-size: rem($superSmall);
+    }
+}
+
+@mixin respFont18 {
+    @include respFont(18, 16, 14);
+}
+@mixin respFont21 {
+    @include respFont(21, 18, 16);
+}
+@mixin respFont24 {
+    @include respFont(24, 22, 22);
+}
+@mixin respFont25 {
+    @include respFont(25, 22, 18);
+}
+@mixin respFont32 {
+    @include respFont(32, 28, 22);
+}
+@mixin respFont42 {
+    @include respFont(42, 36, 24, 20);
+}
+
+// いい点：
+// 分かりやすい
+// いくつかのブレークポイントを追加してもいい
+// デフォルト値を付けやすい
+
+// 悪い点：
+// 生成するCSSが爆発して大きくなる、
+// フォントサイズが変わらなければ、無駄なコードになる（ifで解決できるかも）
+// なかなか手動的です
+
+// レイアウト
+
+// ラインの高さ（Adobe XDの）
+@function spacing($spacing) {
+    @return math.div($spacing, 1000) * 1em;
+ }
+
+//  ブレークポイントを少し簡単にする、絶対省略できる
+
+ @mixin custBreak($custBp) {
+    @media screen and (max-width: $custBp) {
+        @content;
+    }
+}
