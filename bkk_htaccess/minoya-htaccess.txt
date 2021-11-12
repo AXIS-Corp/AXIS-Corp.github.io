@@ -1,0 +1,100 @@
+
+    RewriteEngine on
+    Redirect 301 "/menu-2" "/menu/kenbizen_this_month"
+    Redirect 301 "/menu-5" "/menu/kenbizen_next_month"
+    Redirect 301 "/menu-3" "/menu/higawari_this_month"
+    Redirect 301 "/menu-6" "/menu/higawari_next_month"
+    Redirect 301 "/noodles" "/menu/menbento"
+    Redirect 301 "/ミノヤランチとは" "/feature"
+    Redirect 301 "/ミノヤランチとは/" "/feature"
+    Redirect 301 "/各種お弁当" "/menu"
+    Redirect 301 "/会議用弁当" "/menu"
+    Redirect 301 "/オート゛フ゛ル" "/menu"
+    Redirect 301 "/会社情報" "/about"
+    Redirect 301 "/お問合せ/" "/contact"
+    Redirect 301 "/blog-list.php" "/blog"
+    Redirect 301 "/news-list.php" "/news"
+    Redirect 301 "/店舗一覧" "/area"
+    Redirect 301 "/mnksite" "https://www.minokan.jp/"
+
+
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/blog.php
+    RewriteCond %{QUERY_STRING} pick=(\d*)
+    RewriteRule (.*) /blog/ [R=301,L,QSD]
+    RewriteCond %{REQUEST_URI} ^/news.php
+    RewriteCond %{QUERY_STRING} pick=(\d*)
+    RewriteRule (.*) /news/ [R=301,L,QSD]
+    RewriteCond %{QUERY_STRING} page_id=(12||10)
+    RewriteRule (.*) /menu/higawari_this_month [R=302,L,QSD]
+</IfModule>
+
+
+
+
+#SITEGUARD_PLUGIN_SETTINGS_START
+#==== SITEGUARD_RENAME_LOGIN_SETTINGS_START
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /
+    RewriteRule ^wp-signup\.php 404-siteguard [L]
+    RewriteRule ^wp-activate\.php 404-siteguard [L]
+    RewriteRule ^login_74013(.*)$ wp-login.php$1 [L]
+</IfModule>
+#==== SITEGUARD_RENAME_LOGIN_SETTINGS_END
+#SITEGUARD_PLUGIN_SETTINGS_END
+
+# BEGIN WordPress
+# "BEGIN WordPress" から "END WordPress" までのディレクティブ (行) は
+# 動的に生成され、WordPress フィルターによってのみ修正が可能です。
+# これらのマーカー間にあるディレクティブへのいかなる変更も上書きされてしまいます。
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# “ea-php73” パッケージを既定の “PHP” プログラミング言語として設定します。
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php73 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+   php_flag display_errors Off
+   php_value max_execution_time 60
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 128M
+   php_value post_max_size 8M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php73"
+   php_value upload_max_filesize 2M
+   php_flag zlib.output_compression Off
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors Off
+   php_value max_execution_time 60
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 128M
+   php_value post_max_size 8M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php73"
+   php_value upload_max_filesize 2M
+   php_flag zlib.output_compression Off
+</IfModule>
+# END cPanel-generated php ini directives, do not edit

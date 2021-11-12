@@ -1,0 +1,90 @@
+.htaccess 勉強会 notes
+
+正規表現
+
+Tools:
+https://regexr.com/
+https://weblabo.oscasierra.net/tools/regex/
+
+Learning:
+https://regexcrossword.com/ (英語だけ)
+
+
+一番よく使う正規表現：
+. 任意一文字
+(.*) なんでも（０＋）
+(.+)　なんでも（１＋）
+?　前の文字はあっても、なくても（0回か1回）
+^  $　最初・最後
+
+\d　0-9
+\w 言葉　
+
+\D 0-9じゃない
+\W 言葉じゃない
+
+\. 「.」の記号、エスケープ
+\\ 「\」の記号
+
+a|b A、またはB
+
+リダイレクト
+
+Tools:
+https://htaccess.madewithlove.be/
+
+Apache Stuff
+
+環境変数：
+いくつかの環境変数がある
+一番よく使うのはHTTPSかもしれない
+
+書き方：
+${HTTPS} - HTTPSを確認する、ブール値を返す
+${REQUEST_URI} - ページリクエスト
+${HTTP_HOST} - ドメイン
+    
+${QUERY_STRING} - ？で始まるクエリー・検索ストリング
+
+モジュール
+mod_alias
+mod_rewrite
+
+Directives（ディレクティブ）
+example.com/search?q=1234
+
+RewriteEngine
+RewriteCond
+RewriteBase
+Redirect (RewriteCondとの違い？)
+
+<IfModule mod_rewrite>
+    #実は必要じゃないけど、念のため
+
+    RewriteEngine On 
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    RewriteRule ^(.*)/(.*)(.html)/?$ /blog/$1/$2$3 [L,R=301]
+    RewriteRule ^library(/company)?/?$ /blog/ [L,R=302]
+    
+    RewriteCond %{QUERY_STRING} pick=(\d*)
+    RewriteRule (.*) /news/ [R=301,L,QSD]
+
+    RewriteCond %{QUERY_STRING} page_id=(12||10)
+    RewriteRule (.*) /menu/higawari_this_month [R=302,L,QSD]
+
+     RewriteRule ^(recruit)/(iv.*)/?$ /recruit/interview/ [L,R=301]
+</IfModule
+
+https://httpd.apache.org/docs/current/mod/mod_rewrite.html
+
+
+Special features:
+Concatenation
+CORS Policy manipulation
+
+
+NGINX
+http://diet-dev.com/2017/11/10/nginx_redirect/
+
