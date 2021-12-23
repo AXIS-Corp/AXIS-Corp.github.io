@@ -46,5 +46,22 @@ function fetchNews(cat) {
         });
 }
 
-
-
+// NTT CCC フローティングバナー
+document.addEventListener("DOMContentLoaded", function(){
+	const bnrCloseBtn = document.getElementById("floatBnrClose");
+	const floatingBnr = document.getElementById("float_bnr")
+    bnrCloseBtn.style.display = "block";
+    floatingBnr.style.opacity = "1";
+	  bnrCloseBtn.addEventListener("click", function(){
+		floatingBnr.style.display = 'none';
+	})
+	document.addEventListener("scroll", function() {
+		if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 120) {
+			floatingBnr.style.opacity = "0";
+			floatingBnr.style.pointerEvents = "none"
+		} else {
+			floatingBnr.style.opacity = "1";
+			floatingBnr.style.pointerEvents = "all"
+		}
+	})
+})

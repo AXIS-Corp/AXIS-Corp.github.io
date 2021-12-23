@@ -33,19 +33,6 @@
 @mixin respFont21 {
     @include respFont(21, 18, 16);
 }
-@mixin respFont24 {
-    @include respFont(24, 22, 22);
-}
-@mixin respFont25 {
-    @include respFont(25, 22, 18);
-}
-@mixin respFont32 {
-    @include respFont(32, 28, 22);
-}
-@mixin respFont42 {
-    @include respFont(42, 36, 24, 20);
-}
-
 // いい点：
 // 分かりやすい
 // いくつかのブレークポイントを追加してもいい
